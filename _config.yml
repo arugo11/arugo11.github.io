@@ -2,28 +2,34 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Argo's log # ブラウザタブやSEOに使用
+title: Argo's log
 first_name: Argo
 middle_name:
 last_name:
 email: al23088@shibaura-it.ac.jp
-description: > # カンマの後の行は自動的に連結されます
-  日記兼技術ブログ。
+description: > 
+  開発と日常の記録
 
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
-keywords: jekyll, blog, portfolio, tech blog # キーワードをカスタマイズ
-lang: ja  # 日本語設定
-icon: ⚛️  # ファビコン
+keywords: jekyll, blog, portfolio, tech blog
+lang: ja
+icon: ⚛️
 
-url: https://arugo11.github.io # サイトのURL
-baseurl: # ルートディレクトリの場合は空白
+url: https://arugo11.github.io
+baseurl: 
+last_updated: true
+back_to_top: true
 
 # -----------------------------------------------------------------------------
-# Layout
+# Theme & Layout
 # -----------------------------------------------------------------------------
+
+# メインカラーの設定
+colors:
+  cream: "#F6ECD4"  # カスタムテーマカラー
 
 navbar_fixed: true
 footer_fixed: true
@@ -33,28 +39,62 @@ max_width: 930px
 # Open Graph
 # -----------------------------------------------------------------------------
 
-serve_og_meta: true # SNSでシェアされた時のプレビュー表示用
-serve_schema_org: true
+serve_og_meta: false
+serve_schema_org: false
 
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: arugo11 # GitHubユーザー名
+discord_id:        # あなたのDiscord ID
+twitter_username:  # あなたのTwitter username
+qiita_username:   # あなたのQiita username
+
+github_username: arugo11
+linkedin_username:
+scholar_userid:
+semantic_scholar_id:
+orcid_id:
+medium_username:
+quora_username:
+publons_id:
+research_gate_profile:
+blogger_url:
+work_url:
+
+contact_note: >
+  The best way to reach me is via email.
+
+google_analytics:
+panelbear_analytics:
+google_site_verification:
 
 # -----------------------------------------------------------------------------
-# Blog
+# Blog settings
 # -----------------------------------------------------------------------------
 
-blog_name: "Argo's Blog"
-blog_description: "技術と日常の記録"
+blog_name: "Argo's Weekly Log"
+blog_description: "週に一度の活動記録"
+
+# ブログの表示設定
+latest_posts:
+  enabled: true
+  scrollable: true
+  limit: 5  # トップページに表示する最新記事数
+
 permalink: /blog/:year/:title/
 
-# Giscusコメントシステムの設定
+# タグ設定
+display_tags: ["ML", "TRPG", "Weekly", "Tech", "Daily"]
+tag_collection_name: blog_tags
+tag_page_layout: tag
+tag_page_dir: tag
+
+# Giscus comments
 giscus:
   repo: arugo11/arugo11.github.io
   repo_id: R_kgDONQ_tAw
-  category: "Announcements"
+  category: Announcements
   category_id: DIC_kwDONQ_tA84CkXU9
   mapping: pathname
   strict: 0
@@ -65,46 +105,165 @@ giscus:
   lang: ja
 
 # -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# プロジェクトのカテゴリー
+project_categories:
+  - title: Machine Learning
+    description: 機械学習関連のプロジェクト
+  - title: Reinforcement Learning
+    description: 強化学習の実験と実装
+
+# -----------------------------------------------------------------------------
 # Jekyll settings
 # -----------------------------------------------------------------------------
 
+# Markdown and syntax highlight
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter_opts:
-    css_class: "highlight"
+    default_lang: python
+    css_class: 'highlight'
     span:
       line_numbers: false
     block:
-      line_numbers: false
+      line_numbers: true
       start_line: 1
 
+# Includes & excludes
+include: ['_pages']
+exclude:
+  - bin/
+  - CONTRIBUTING.md
+  - CUSTOMIZE.md
+  - Dockerfile
+  - docker-compose.yml
+  - README.md
+  - vendor/
+
+# Plug-ins
+plugins:
+  - jekyll-archives
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-imagemagick
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-scholar
+  - jekyll-sitemap
+  - jekyll-toc
+  - jemoji
+
+# 検索機能
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# プロフィール画像の設定
+profile:
+  image: profile.jpg  # 実際の画像ファイル名に変更してください
+  image_circular: false
+  address: >
+    <p>工業大学生。</p>
+    <p>週に一度のペースで更新したい。</p>
+
 # -----------------------------------------------------------------------------
-# Optional Features
+# Additional Features
 # -----------------------------------------------------------------------------
 
-enable_darkmode: true
 enable_math: true
-enable_masonry: true
-enable_tooltips: false
+enable_darkmode: true
 enable_progressbar: true
 enable_medium_zoom: true
+enable_navbar_social: true
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:title/
-  projects:
-    output: true
-    permalink: /projects/:path/
+# -----------------------------------------------------------------------------
+# Library versions
+# -----------------------------------------------------------------------------
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post
-      comments: true
+third_party_libraries:
+  download: false
+  bootstrap-table:
+    version: "1.22.4"
+    integrity:
+      css: "sha256-uRX+PiRTR4ysKFRCykT8HLuRCub26LgXJZym3Yeom1c="
+      js: "sha256-4rppopQE9POKfukn2kEvhJ9Um25Cf6+IDVkARD0xh78="
+    url:
+      css: "https://cdn.jsdelivr.net/npm/bootstrap-table@{{version}}/dist/bootstrap-table.min.css"
+      js: "https://cdn.jsdelivr.net/npm/bootstrap-table@{{version}}/dist/bootstrap-table.min.js"
+  chartjs:
+    version: "4.4.1"
+    integrity:
+      js: "sha256-0q+JdOlScWOHcunpUk21uab1jW7C1deBQARHtKMcaB4="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/chart.js@{{version}}/dist/chart.umd.min.js"
+  jquery:
+    version: "3.6.0"
+    integrity:
+      js: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/jquery@{{version}}/dist/jquery.min.js"
+  masonry:
+    version: "4.2.2"
+    integrity:
+      js: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/masonry-layout@{{version}}/dist/masonry.pkgd.min.js"
+  medium_zoom:
+    version: "1.1.0"
+    integrity:
+      js: "sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/medium-zoom@{{version}}/dist/medium-zoom.min.js"
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+  # -----------------------------------------------------------------------------
+# Jekyll Scholar settings
+# -----------------------------------------------------------------------------
+
+scholar:
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: references.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+  
+  sort_by: year,month
+  order: descending
+
+# ナビゲーションから該当セクションを除外
+nav_exclude:
+  - /cv/
+  - /people/
