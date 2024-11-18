@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
     gem 'classifier-reborn'
-    gem 'jekyll'
+    gem 'jekyll', '~> 4.3.2'
     gem 'jekyll-archives'
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'
@@ -20,9 +20,10 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'unicode_utils'
     gem 'webrick'
-    gem 'jekyll-sass-converter', '~> 2.0'
-    gem 'sass-embedded', '~> 1.54'
+    gem 'jekyll-sass-converter', '~> 3.0.0'
+    gem 'sass-embedded', '~> 1.58.3'
 end
+
 group :other_plugins do
     gem 'css_parser'
     gem 'feedjira'
