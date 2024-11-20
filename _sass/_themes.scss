@@ -5,29 +5,29 @@
 @use "sass:color";
 
 :root {
-  --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
+  --global-bg-color: #{$cream-color};
+  --global-code-bg-color: #{$beige-color};
+  --global-text-color: #{$brown-color};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
-  --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
+  --global-theme-color: #{$brown-color};
+  --global-hover-color: color.adjust($brown-color, $lightness: 10%);
+  --global-hover-text-color: #{$cream-color};
+  --global-footer-bg-color: #{$brown-color};
+  --global-footer-text-color: #{$cream-color};
+  --global-footer-link-color: #{$beige-color};
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
+  --global-highlight-color: #{$brown-color};
   --global-back-to-top-bg-color: rgba(
-    #{red($black-color)},
-    #{green($black-color)},
-    #{blue($black-color)},
+    #{red($brown-color)},
+    #{green($brown-color)},
+    #{blue($brown-color)},
     0.4
   );
-  --global-back-to-top-text-color: #{$white-color};
+  --global-back-to-top-text-color: #{$cream-color};
   --global-newsletter-bg-color: #{$white-color};
-  --global-newsletter-text-color: #{$black-color};
+  --global-newsletter-text-color: #{$brown-color};
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -41,6 +41,10 @@
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+
+  --global-footer-bg-color: #{rgba($brown-color, 0.8)};
+  --global-footer-text-color: #{$cream-color};
+  --global-footer-link-color: #{$white-color};
 
   #light-toggle-system {
     padding-left: 10px;

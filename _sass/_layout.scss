@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /******************************************************************************
  * Content
  ******************************************************************************/
@@ -7,23 +9,16 @@ body {
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 66px;
   }
 }
 
 body.fixed-top-nav {
-  // Add some padding for the nav-bar.
   padding-top: 56px;
 }
 
 body.sticky-bottom-footer {
-  // Remove padding below footer.
   padding-bottom: 0;
 }
 
@@ -31,23 +26,134 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
-// Profile
 .profile {
   img {
     width: 100%;
   }
 }
 
-// TODO: redefine content layout.
+.profile-info {
+  background: rgba($brown-color, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba($brown-color, 0.05);
 
-/******************************************************************************
- * Publications
- ******************************************************************************/
+  img {
+    border: 3px solid $white-color;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba($brown-color, 0.1);
+  }
 
-// TODO: redefine publications layout.
+  .contact-info {
+    margin-top: 1rem;
+    
+    h4 {
+      color: rgba($brown-color, 0.8);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: $brown-color;
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+      border-left: 2px solid rgba($brown-color, 0.2);
+    }
+  }
+    .info-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    
+    i {
+      width: 20px;
+      color: $brown-color;
+      margin-right: 0.8rem;
+    }
+    
+    span {
+      color: rgba($brown-color, 0.8);
+      font-size: 0.95rem;
+    }
+  }
+}
 
-/*****************************************************************************
-* Projects
-*****************************************************************************/
+.navbar {
+  $navbar-bg: darken($cream-color, 5%);
+  $navbar-border: rgba($brown-color, 0.1);
+  
+  background-color: $navbar-bg;
+  border-bottom: 1px solid $navbar-border;
+  box-shadow: 0 2px 4px rgba($brown-color, 0.1);
 
-// TODO: redefine projects layout.
+  .navbar-brand {
+    color: $brown-color !important;
+    font-weight: 600;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: rgba($brown-color, 0.8) !important;
+        
+        &:hover {
+          color: $brown-color !important;
+        }
+        
+        &:active {
+          color: $brown-color !important;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.post-title {
+  color: $brown-color;
+}
+
+.post-description {
+  color: rgba($brown-color, 0.8);
+}
+
+.site-title {
+  color: $brown-color;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba($brown-color, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.page-description {
+  color: rgba($brown-color, 0.7);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.profile {
+  .more-info {
+    p {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba($brown-color, 0.1);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.social {
+  a {
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
