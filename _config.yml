@@ -157,26 +157,26 @@ exclude:
 # Plug-ins
 plugins:
   - jekyll-archives
-  - jekyll-email-protect
+  # - jekyll-email-protect
   - jekyll-feed
-  - jekyll-imagemagick
-  - jekyll-minifier
-  - jekyll-paginate-v2
-  - jekyll-scholar
+  # - jekyll-imagemagick
+  # - jekyll-minifier
+  # - jekyll-paginate-v2
+  # - jekyll-scholar
   - jekyll-sitemap
-  - jekyll-toc
+  # - jekyll-toc
   - jemoji
 
 # 検索機能
-search_enabled: true
-search:
-  heading_level: 3
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
-  tokenizer_separator: /[\s/]+/
-  rel_url: true
-  button: false
+# search_enabled: true
+# search:
+#   heading_level: 3
+#   previews: 3
+#   preview_words_before: 5
+#   preview_words_after: 10
+#   tokenizer_separator: /[\s/]+/
+#   rel_url: true
+#   button: false
 
 # プロフィール画像の設定
 profile:
@@ -243,25 +243,25 @@ sass:
 # Jekyll Scholar settings
 # -----------------------------------------------------------------------------
 
-scholar:
-  style: apa
-  locale: en
+# scholar:
+#   style: apa
+#   locale: en
 
-  source: /_bibliography/
-  bibliography: references.bib
-  bibliography_template: bib
+#   source: /_bibliography/
+#   bibliography: references.bib
+#   bibliography_template: bib
 
-  replace_strings: true
-  join_strings: true
+#   replace_strings: true
+#   join_strings: true
 
-  details_dir: bibliography
-  details_layout: bibtex.html
-  details_link: Details
+#   details_dir: bibliography
+#   details_layout: bibtex.html
+#   details_link: Details
 
-  query: "@*"
+#   query: "@*"
   
-  sort_by: year,month
-  order: descending
+#   sort_by: year,month
+#   order: descending
 
 # -----------------------------------------------------------------------------
 # Navigation bar
