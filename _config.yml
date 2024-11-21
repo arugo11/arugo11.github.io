@@ -293,3 +293,7 @@ nav_exclude:
 submenus:
   - title: Schedule
     url: /schedule/
+
+# リポジトリ設定を追加
+repository: arugo11/arugo11.github.io
+github: [metadata]

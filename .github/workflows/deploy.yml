@@ -65,8 +65,10 @@
       # available images: https://github.com/actions/runner-images#available-images
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout 🛎️
+        - name: Checkout
           uses: actions/checkout@v4
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
         - name: Setup Ruby 💎
           uses: ruby/setup-ruby@v1
           with:
@@ -85,7 +87,10 @@
             valueFile: "_config.yml"
             propertyPath: "giscus.repo"
             value: ${{ github.repository }}
-        - name: Install and Build 🔧
+        - name: Install and Build
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            PAGES_REPO_NWO: arugo11/arugo11.github.io
           run: |
             pip3 install --upgrade nbconvert
             export JEKYLL_ENV=production
