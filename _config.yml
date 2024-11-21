@@ -263,7 +263,33 @@ scholar:
   sort_by: year,month
   order: descending
 
+# -----------------------------------------------------------------------------
+# Navigation bar
+# -----------------------------------------------------------------------------
+
+navbar_pages:
+  - name: about
+    url: /
+  - name: blog
+    url: /blog/
+  - name: projects
+    url: /projects/
+  - name: repositories
+    url: /repositories/
+  - name: classes
+    url: /classes/
+  - name: schedule
+    url: /schedule/
+
 # ナビゲーションから該当セクションを除外
 nav_exclude:
   - /cv/
   - /people/
+
+  # -----------------------------------------------------------------------------
+# Submenus
+# -----------------------------------------------------------------------------
+
+submenus:
+  - title: Schedule
+    url: /schedule/
