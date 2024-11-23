@@ -10,7 +10,7 @@
   --global-text-color: #{$brown-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$brown-color};
-  --global-hover-color: color.adjust($brown-color, $lightness: 10%);
+  --global-hover-color: lighten($brown-color, 10%);
   --global-hover-text-color: #{$cream-color};
   --global-footer-bg-color: #{$brown-color};
   --global-footer-text-color: #{$cream-color};
