@@ -297,7 +297,3 @@ submenus:
 # リポジトリ設定を追加
 repository: arugo11/arugo11.github.io
 github: [metadata]
-
-sass:
-  style: compressed
-  sass_dir: _sass
