@@ -157,3 +157,19 @@ body.sticky-bottom-footer {
     }
   }
 }
+
+// Project cards
+.projects {
+  .card-title {
+    // Reduce heading size within project cards
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  @media (min-width: 992px) {
+    .card-title {
+      font-size: 1.35rem;
+    }
+  }
+}
