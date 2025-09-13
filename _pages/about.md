@@ -21,5 +21,5 @@ social: true
 
 ソーシャルメディアリンク:
 - Discord: argo___
-- Twitter: [arugo___](https://twitter.com/arugo___)
+- Twitter: [arugo\_\_\_](https://twitter.com/arugo___)
 - Steam: [arugo11](https://steamcommunity.com/id/arugo11)

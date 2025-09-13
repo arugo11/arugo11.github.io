@@ -47,7 +47,8 @@ serve_schema_org: false
 # -----------------------------------------------------------------------------
 
 discord_id:        # あなたのDiscord ID
-twitter_username:  # あなたのTwitter username
+twitter_username:  # Deprecated; use x_username
+x_username: arugo___
 qiita_username:   # あなたのQiita username
 
 github_username: arugo11
