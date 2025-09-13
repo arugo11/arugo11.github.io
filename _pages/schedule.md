@@ -3,7 +3,8 @@ layout: page
 title: Schedule
 permalink: /schedule/
 description: 今後3ヶ月の予定
-nav: true
+nav: false
+nav_exclude: true
 nav_order: 6
 ---
 
