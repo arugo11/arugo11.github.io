@@ -40,6 +40,18 @@ social: true
 - 学校区分: 学士
 - 研究室: 菅谷研究室
 
+## 受賞・執筆歴
+
+- [RoboCup Junior Rescue Line 2020 関東大会出場](/projects/robocup-rescue-line-2019-2025/)
+- SWEST27 インタラクティブセッション 研究開発部門 ベストポスター賞（[発表資料 PDF](/assets/pdf/2025_SWEST_%E5%B5%8B%E4%B8%AD.pdf)）
+- 松尾研LLM開発コンペ2025 MVP
+
+## 所有免許・資格
+
+- ITパスポート
+- 基本情報技術者試験
+- 応用情報技術者試験
+
 ソーシャルメディアリンク:
 - Discord: argo___
 - Twitter: [arugo\_\_\_](https://twitter.com/arugo___)
