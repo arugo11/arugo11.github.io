@@ -7,10 +7,32 @@ layout: page
 permalink: /projects/prism-jphacks-2024/
 github: https://github.com/jphacks/tk_2428
 github_stars: jphacks/tk_2428
+img: /assets/img/PRISM.png
 ---
+
+{% include figure.liquid path=page.img alt="PRISM thumbnail" sizes="(min-width: 768px) 720px, 100vw" %}
+
+<div class="mb-3">
+  <a class="btn btn-sm z-depth-0" href="{{ page.github }}" target="_blank">
+    <i class="fa-brands fa-github"></i> GitHubで見る
+  </a>
+</div>
+
+<p>
+  <span class="badge bg-secondary">Python</span>
+  <span class="badge bg-secondary">Claude API</span>
+  <span class="badge bg-secondary">2D/3D Visualization</span>
+  <span class="badge bg-secondary">Backend</span>
+  <span class="badge bg-secondary">Team Lead</span>
+</p>
 
 ## 概要
 大学2年の夏に JPHACKS に参加し、政治記事を直感的に理解できる可視化ツール「PRISM」を開発しました。記事本文やURLを入力すると Claude API により JSON を生成し、人物・政策・法令などの関係性を抽出して 2D・3D の相関図として表示します。
+
+## ハイライト
+- 記事本文/URLからの関係抽出と可視化の一連のパイプラインを設計
+- Claude APIによるJSON生成→グラフ抽出→2D/3D相関図レンダリング
+- 安定動作のための3D描画調整とデータ処理の堅牢化
 
 ## 期間 / 体制 / 役割
 - 期間: 2025年10月
