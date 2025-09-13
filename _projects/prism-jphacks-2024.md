@@ -1,7 +1,7 @@
 ---
 title: PRISM — 政治記事の可視化ツール
 description: JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。
-date: 2025-10-01
+date: 2024-10-27
 importance: 1
 layout: page
 permalink: /projects/prism-jphacks-2024/
