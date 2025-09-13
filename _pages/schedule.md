@@ -9,13 +9,15 @@ nav_order: 6
 
 <div id="calendar"></div>
 
-<!-- モーダル -->
-<div class="modal fade" id="eventModal" tabindex="-1">
-  <div class="modal-dialog">
+<!-- モーダル (Bootstrap 4) -->
+<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <p class="event-time"></p>
@@ -29,9 +31,7 @@ nav_order: 6
 <!-- FullCalendar本体 -->
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
 
-<!-- Bootstrap 5のCSS/JS -->
-<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
-<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'></script>
+<!-- 注意: このサイトは Bootstrap 4 を使用しています。Bootstrap 5 は読み込まないでください。 -->
 
 <!-- カスタム設定 -->
 <script>
@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
       start: new Date(),
       end: new Date().setMonth(new Date().getMonth() + 3)
     },
-    themeSystem: 'bootstrap5',
+    // FullCalendar はデフォルトテーマを使用（Bootstrap 5 は混在させない）
+    // themeSystem: 'standard',
     height: 'auto',
     firstDay: 0,
     locale: 'ja',
@@ -101,9 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.querySelector('.event-description').style.display = 'none';
       }
       
-      // モーダルを表示
-      var bsModal = new bootstrap.Modal(modal);
-      bsModal.show();
+      // モーダルを表示 (Bootstrap 4)
+      $('#eventModal').modal('show');
     }
   });
   calendar.render();
