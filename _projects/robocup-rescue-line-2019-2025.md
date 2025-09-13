@@ -5,7 +5,10 @@ date: 2025-09-01
 importance: 1
 layout: page
 permalink: /projects/robocup-rescue-line-2019-2025/
+img: /assets/img/robocupjunior.png
 ---
+
+{% include figure.liquid path=page.img alt="RoboCup Junior Rescue Line thumbnail" sizes="(min-width: 768px) 720px, 100vw" %}
 
 <p>
   <span class="badge bg-secondary">Arduino</span>
