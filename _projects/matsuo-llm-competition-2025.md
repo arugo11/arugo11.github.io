@@ -5,7 +5,10 @@ date: 2025-07-01
 importance: 4
 layout: page
 permalink: /projects/matsuo-llm-competition-2025/
+img: /assets/img/llmcompe2025.png
 ---
+
+{% include figure.liquid path=page.img alt="LLM Compe 2025 thumbnail" sizes="(min-width: 768px) 720px, 100vw" %}
 
 <div class="mb-3">
   <a class="btn btn-sm z-depth-0" href="https://weblab.t.u-tokyo.ac.jp/lm-compe-2025/" target="_blank" rel="noopener">
@@ -40,4 +43,3 @@ permalink: /projects/matsuo-llm-competition-2025/
 ## 成果
 - 総合順位: 全10チーム中5位、DNAスコア3位
 - 大会全体MVPを受賞（開発過程の評価）
-
