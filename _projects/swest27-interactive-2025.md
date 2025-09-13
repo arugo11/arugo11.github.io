@@ -5,6 +5,7 @@ date: 2025-07-01
 importance: 3
 layout: page
 permalink: /projects/swest27-interactive-2025/
+img: /assets/img/11_award_09.jpg
 ---
 
 <div class="mb-3">
