@@ -19,6 +19,20 @@ social: true
 
 工業大学生、TRPGが好き。
 
+## スキル
+
+- 言語: Python, C
+- 機械学習: PyTorch, scikit-learn
+- コンピュータビジョン: OpenCV
+- OS/環境: Ubuntu, WSL
+- 開発ツール: Git, pytest
+
+### 好きなツール / フレームワーク
+- PyTorch: 柔軟でデバッグしやすい
+- WSL: 手軽にUbuntuを使える
+- Vim: 軽量で見やすい
+- ROS 2: エコシステムが充実し通信仕様が明快
+
 ## 学歴
 
 - 学校名: 芝浦工業大学
