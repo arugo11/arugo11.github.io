@@ -160,3 +160,9 @@
 .modal-header {
   border-bottom-color: #E8DCC4;
 }
+
+// Project card thumbnails: keep consistent aspect ratio
+.card-img-top {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
