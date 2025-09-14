@@ -1,97 +1,81 @@
+########################################
+# CV data for /cv/
+########################################
+
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - name: Name
+      value: Argo
+    - name: Email
+      value: al23088@shibaura-it.ac.jp
+    - name: Location
+      value: 東京都練馬区
+    - name: Affiliation
+      value: 芝浦工業大学 工学部 情報工学科（菅谷研究室）
+    - name: Website
+      value: <a href="https://arugo11.github.io">arugo11.github.io</a>
+    - name: GitHub
+      value: <a href="https://github.com/arugo11">@arugo11</a>
+    - name: X (Twitter)
+      value: <a href="https://twitter.com/arugo___">@arugo___</a>
+    - name: Discord
+      value: argo___
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+    - title: 学士（情報工学科）
+      institution: 芝浦工業大学 工学部
+      year: 在学中
 
-- title: Experience
+- title: Skills
+  type: nested_list
+  contents:
+    - title: 言語
+      items:
+        - Python, C
+    - title: 機械学習
+      items:
+        - PyTorch, scikit-learn
+    - title: コンピュータビジョン
+      items:
+        - OpenCV
+    - title: OS/環境
+      items:
+        - Ubuntu, WSL
+    - title: 開発ツール
+      items:
+        - Git, pytest, Vim, ROS 2
+
+- title: Selected Projects
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: PRISM — 政治記事の可視化ツール
+      year: 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - JPHACKS 2024 参加作品。記事/URLから関係を抽出し 2D/3D で可視化。
+        - <a href="/projects/prism-jphacks-2024/">プロジェクトページ</a>
+    - title: RoboCup Junior Rescue Line — センサ処理とNXT制御
+      year: 2019-2020
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+        - Arduino と NXT を I2C 連携し、NXC で走行制御を実装。
+        - <a href="/projects/robocup-rescue-line-2019-2025/">プロジェクトページ</a>
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - SWEST27 インタラクティブセッション 研究開発部門 ベストポスター賞 (<a href="/assets/pdf/2025_SWEST_%E5%B5%8B%E4%B8%AD.pdf">発表資料</a>)
+        - 松尾研LLM開発コンペ2025 MVP
+    - year: 2020
       items:
-        - Max Planck Medal
+        - RoboCup Junior Rescue Line 関東大会出場 (<a href="/projects/robocup-rescue-line-2019-2025/">プロジェクト</a>)
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Licenses and Certifications
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - ITパスポート
+    - 基本情報技術者試験
+    - 応用情報技術者試験

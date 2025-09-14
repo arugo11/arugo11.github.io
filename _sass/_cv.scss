@@ -10,6 +10,12 @@ table.table-cv {
   background-color: transparent !important;
 }
 
+/* Fix: ensure text in CV tables is visible even if a global `.text` class sets transparent color */
+.cv table.table-cv td.text,
+.cv table.table-cv-map td.text {
+  color: var(--global-text-color) !important;
+}
+
 a.btncv {
   color: var(--global-text-color) !important;
   border: 1px solid var(--global-text-color) !important;
