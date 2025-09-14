@@ -28,6 +28,7 @@ social: true
 - 開発ツール: Git, pytest
 
 ### 好きなツール / フレームワーク
+
 - PyTorch: 柔軟でデバッグしやすい
 - WSL: 手軽にUbuntuを使える
 - Vim: 軽量で見やすい
@@ -53,6 +54,7 @@ social: true
 - 応用情報技術者試験
 
 ソーシャルメディアリンク:
-- Discord: argo___
+
+- Discord: argo\_\_\_
 - Twitter: [arugo\_\_\_](https://twitter.com/arugo___)
 - Steam: [arugo11](https://steamcommunity.com/id/arugo11)

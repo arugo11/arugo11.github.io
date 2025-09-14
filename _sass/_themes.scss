@@ -2,7 +2,6 @@
  * Themes
  ******************************************************************************/
 
-
 :root {
   --global-bg-color: #{$cream-color};
   --global-code-bg-color: #{$beige-color};
@@ -18,12 +17,7 @@
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
   --global-highlight-color: #{$brown-color};
-  --global-back-to-top-bg-color: rgba(
-    #{red($brown-color)},
-    #{green($brown-color)},
-    #{blue($brown-color)},
-    0.4
-  );
+  --global-back-to-top-bg-color: rgba(#{red($brown-color)}, #{green($brown-color)}, #{blue($brown-color)}, 0.4);
   --global-back-to-top-text-color: #{$cream-color};
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$brown-color};
@@ -91,12 +85,7 @@ html[data-theme="dark"] {
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};
-  --global-back-to-top-bg-color: rgba(
-    #{red($white-color)},
-    #{green($white-color)},
-    #{blue($white-color)},
-    0.5
-  );
+  --global-back-to-top-bg-color: rgba(#{red($white-color)}, #{green($white-color)}, #{blue($white-color)}, 0.5);
   --global-back-to-top-text-color: #{$black-color};
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};

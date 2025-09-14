@@ -2,122 +2,124 @@
 
 // カスタムカラー変数
 :root {
-    --theme-cream: #F6ECD4;
-    --global-bg-color: #{var(--theme-cream)};
+  --theme-cream: #f6ecd4;
+  --global-bg-color: #{var(--theme-cream)};
+}
+
+// ライトモード用のスタイル
+.light {
+  --global-bg-color: var(--theme-cream);
+  --global-text-color: #2c3e50;
+  --global-theme-color: #2c3e50;
+  --global-hover-color: #425b75;
+}
+
+// ダークモード用のスタイル
+.dark {
+  --global-bg-color: #202124;
+  --global-text-color: #ffffff;
+  --global-theme-color: #8ab4f8;
+  --global-hover-color: #aec7f4;
+}
+
+// カスタムスタイル
+body {
+  background-color: var(--global-bg-color);
+}
+
+// ブログカード用のスタイル
+.post-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
   }
-  
-  // ライトモード用のスタイル
-  .light {
-    --global-bg-color: var(--theme-cream);
-    --global-text-color: #2c3e50;
-    --global-theme-color: #2c3e50;
-    --global-hover-color: #425b75;
+}
+
+// 週記用のスタイル
+.weekly-log {
+  border-left: 4px solid var(--global-theme-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+// TRPGセッション記録用のスタイル
+.trpg-session {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+
+  .session-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
   }
-  
-  // ダークモード用のスタイル
-  .dark {
-    --global-bg-color: #202124;
-    --global-text-color: #ffffff;
-    --global-theme-color: #8ab4f8;
-    --global-hover-color: #aec7f4;
+}
+
+// リンク風ボタンの可読性改善（ダーク/ライト両対応）
+// 例: <a class="btn btn-sm z-depth-0">...</a>
+a.btn.z-depth-0 {
+  color: var(--global-text-color) !important;
+  border: 1px solid var(--global-text-color) !important;
+  background: transparent !important;
+  box-shadow: none;
+
+  &:hover {
+    color: var(--global-theme-color) !important;
+    border-color: var(--global-theme-color) !important;
+    text-decoration: none;
   }
-  
-  // カスタムスタイル
-  body {
-    background-color: var(--global-bg-color);
-  }
-  
-  // ブログカード用のスタイル
-  .post-card {
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    
-    &:hover {
-      transform: translateY(-2px);
-    }
-  }
-  
-  // 週記用のスタイル
-  .weekly-log {
-    border-left: 4px solid var(--global-theme-color);
-    padding-left: 1rem;
-    margin: 1rem 0;
-  }
-  
-  // TRPGセッション記録用のスタイル
-  .trpg-session {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    
-    .session-title {
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+}
+
+// 強化学習関連の記事用のスタイル
+.ml-article {
+  .formula {
+    background: rgba(0, 0, 0, 0.02);
+    padding: 1rem;
+    border-radius: 4px;
   }
 
-  // リンク風ボタンの可読性改善（ダーク/ライト両対応）
-  // 例: <a class="btn btn-sm z-depth-0">...</a>
-  a.btn.z-depth-0 {
-    color: var(--global-text-color) !important;
-    border: 1px solid var(--global-text-color) !important;
-    background: transparent !important;
-    box-shadow: none;
+  .code-block {
+    margin: 1rem 0;
+  }
+}
 
-    &:hover {
-      color: var(--global-theme-color) !important;
-      border-color: var(--global-theme-color) !important;
-      text-decoration: none;
-    }
+// カジュアルな見出しスタイル
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--global-theme-color);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 2px;
+    background: currentColor;
+    margin-top: 0.2em;
+    opacity: 0.5;
   }
-  
-  // 強化学習関連の記事用のスタイル
-  .ml-article {
-    .formula {
-      background: rgba(0, 0, 0, 0.02);
-      padding: 1rem;
-      border-radius: 4px;
-    }
-    
-    .code-block {
-      margin: 1rem 0;
-    }
-  }
-  
-  // カジュアルな見出しスタイル
-  h1, h2, h3 {
-    font-weight: 700;
-    color: var(--global-theme-color);
-    
-    &::after {
-      content: '';
-      display: block;
-      width: 2em;
-      height: 2px;
-      background: currentColor;
-      margin-top: 0.2em;
-      opacity: 0.5;
-    }
-  }
-  // カレンダーのカスタマイズ
+}
+// カレンダーのカスタマイズ
 .fc {
-  --fc-border-color: #E8DCC4;
-  --fc-button-bg-color: #4A3D39;
-  --fc-button-border-color: #4A3D39;
-  --fc-button-hover-bg-color: #3A2D29;
-  --fc-button-hover-border-color: #3A2D29;
-  --fc-today-bg-color: #F6ECD4;
-  --fc-event-bg-color: #4A3D39;
-  --fc-event-border-color: #4A3D39;
+  --fc-border-color: #e8dcc4;
+  --fc-button-bg-color: #4a3d39;
+  --fc-button-border-color: #4a3d39;
+  --fc-button-hover-bg-color: #3a2d29;
+  --fc-button-hover-border-color: #3a2d29;
+  --fc-today-bg-color: #f6ecd4;
+  --fc-event-bg-color: #4a3d39;
+  --fc-event-border-color: #4a3d39;
 }
 
 // イベントのスタイル
 .fc-event {
   cursor: pointer;
   transition: opacity 0.2s;
-  
+
   &:hover {
     opacity: 0.9;
   }
@@ -125,19 +127,19 @@
 
 // カレンダーのカスタマイズ
 .fc {
-  --fc-border-color: #E8DCC4;
-  --fc-button-bg-color: #4A3D39;
-  --fc-button-border-color: #4A3D39;
-  --fc-button-hover-bg-color: #3A2D29;
-  --fc-button-hover-border-color: #3A2D29;
-  --fc-today-bg-color: #F6ECD4;
-  --fc-event-bg-color: #4A3D39;
-  --fc-event-border-color: #4A3D39;
-  
+  --fc-border-color: #e8dcc4;
+  --fc-button-bg-color: #4a3d39;
+  --fc-button-border-color: #4a3d39;
+  --fc-button-hover-bg-color: #3a2d29;
+  --fc-button-hover-border-color: #3a2d29;
+  --fc-today-bg-color: #f6ecd4;
+  --fc-event-bg-color: #4a3d39;
+  --fc-event-border-color: #4a3d39;
+
   .fc-button {
     text-transform: none;
   }
-  
+
   .fc-toolbar-title {
     font-size: 1.2em;
   }
@@ -146,7 +148,7 @@
 .fc-event {
   cursor: pointer;
   transition: opacity 0.2s;
-  
+
   &:hover {
     opacity: 0.9;
   }
@@ -154,11 +156,11 @@
 
 // モーダルのスタイル
 .modal-content {
-  background-color: #F6ECD4;
+  background-color: #f6ecd4;
 }
 
 .modal-header {
-  border-bottom-color: #E8DCC4;
+  border-bottom-color: #e8dcc4;
 }
 
 // Project card thumbnails: keep consistent aspect ratio

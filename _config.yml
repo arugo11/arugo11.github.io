@@ -7,7 +7,7 @@ first_name: Argo
 middle_name:
 last_name:
 email: al23088@shibaura-it.ac.jp
-description: > 
+description: >
   開発と日常の記録
 
 footer_text: >
@@ -19,7 +19,7 @@ lang: ja
 icon: ⚛️
 
 url: https://arugo11.github.io
-baseurl: 
+baseurl:
 last_updated: true
 back_to_top: true
 
@@ -29,7 +29,7 @@ back_to_top: true
 
 # メインカラーの設定
 colors:
-  cream: "#F6ECD4"  # カスタムテーマカラー
+  cream: "#F6ECD4" # カスタムテーマカラー
 
 navbar_fixed: true
 footer_fixed: true
@@ -49,10 +49,10 @@ og_image: /assets/img/icon.jpg
 # Social integration
 # -----------------------------------------------------------------------------
 
-discord_id:        # あなたのDiscord ID
-twitter_username:  # Deprecated; use x_username
+discord_id: # あなたのDiscord ID
+twitter_username: # Deprecated; use x_username
 x_username: arugo___
-qiita_username:   # あなたのQiita username
+qiita_username: # あなたのQiita username
 
 github_username: arugo11
 linkedin_username:
@@ -84,7 +84,7 @@ blog_description: "週に一度の活動記録"
 latest_posts:
   enabled: true
   scrollable: true
-  limit: 5  # トップページに表示する最新記事数
+  limit: 5 # トップページに表示する最新記事数
 
 permalink: /blog/:year/:title/
 
@@ -140,7 +140,7 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     default_lang: python
-    css_class: 'highlight'
+    css_class: "highlight"
     span:
       line_numbers: false
     block:
@@ -148,7 +148,7 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ['_pages']
+include: ["_pages"]
 exclude:
   - bin/
   - CONTRIBUTING.md
@@ -184,7 +184,7 @@ search:
 
 # プロフィール画像の設定
 profile:
-  image: profile.jpg  # 実際の画像ファイル名に変更してください
+  image: profile.jpg # 実際の画像ファイル名に変更してください
   image_circular: false
   address: >
     <p>工業大学生。</p>
@@ -271,7 +271,7 @@ imagemagick:
 #   details_link: Details
 
 #   query: "@*"
-  
+
 #   sort_by: year,month
 #   order: descending
 

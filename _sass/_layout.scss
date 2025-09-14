@@ -9,7 +9,12 @@ body {
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     scroll-margin-top: 66px;
   }
 }
@@ -47,14 +52,14 @@ body.sticky-bottom-footer {
 
   .contact-info {
     margin-top: 1rem;
-    
+
     h4 {
       color: rgba($brown-color, 0.8);
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    
+
     p {
       color: $brown-color;
       margin-bottom: 0.5rem;
@@ -62,17 +67,17 @@ body.sticky-bottom-footer {
       border-left: 2px solid rgba($brown-color, 0.2);
     }
   }
-    .info-group {
+  .info-group {
     display: flex;
     align-items: center;
     margin-bottom: 0.8rem;
-    
+
     i {
       width: 20px;
       color: $brown-color;
       margin-right: 0.8rem;
     }
-    
+
     span {
       color: rgba($brown-color, 0.8);
       font-size: 0.95rem;
@@ -140,7 +145,7 @@ body.sticky-bottom-footer {
       margin-bottom: 0.5rem;
       padding: 0.5rem 0;
       border-bottom: 1px solid rgba($brown-color, 0.1);
-      
+
       &:last-child {
         border-bottom: none;
       }
@@ -151,7 +156,7 @@ body.sticky-bottom-footer {
 .social {
   a {
     transition: transform 0.2s ease;
-    
+
     &:hover {
       transform: translateY(-2px);
     }
