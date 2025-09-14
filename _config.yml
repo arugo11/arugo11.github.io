@@ -39,8 +39,11 @@ max_width: 930px
 # Open Graph
 # -----------------------------------------------------------------------------
 
-serve_og_meta: false
-serve_schema_org: false
+serve_og_meta: true
+serve_schema_org: true
+
+# Default OG image for social sharing
+og_image: /assets/img/icon.jpg
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -160,7 +163,7 @@ plugins:
   - jekyll-archives
   # - jekyll-email-protect
   - jekyll-feed
-  # - jekyll-imagemagick
+  - jekyll-imagemagick
   # - jekyll-minifier
   # - jekyll-paginate-v2
   # - jekyll-scholar
@@ -169,15 +172,15 @@ plugins:
   - jemoji
 
 # 検索機能
-# search_enabled: true
-# search:
-#   heading_level: 3
-#   previews: 3
-#   preview_words_before: 5
-#   preview_words_after: 10
-#   tokenizer_separator: /[\s/]+/
-#   rel_url: true
-#   button: false
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
 
 # プロフィール画像の設定
 profile:
@@ -196,6 +199,9 @@ enable_darkmode: true
 enable_progressbar: true
 enable_medium_zoom: true
 enable_navbar_social: true
+
+# Images
+lazy_loading_images: true
 
 # -----------------------------------------------------------------------------
 # Library versions
@@ -239,6 +245,11 @@ third_party_libraries:
 sass:
   style: compressed
   sass_dir: _sass
+
+# Responsive image generation (used by includes/figure.liquid)
+imagemagick:
+  enabled: false
+  widths: [320, 640, 960, 1200]
 
   # -----------------------------------------------------------------------------
 # Jekyll Scholar settings
