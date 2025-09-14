@@ -30,30 +30,100 @@
 
 
 
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="Argo's log">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Argo's log | Schedule">
+  <meta property="og:url" content="https://arugo11.github.io/pages/arugo11/schedule/">
+  <meta property="og:description" content="今後3ヶ月の予定">
+  
+    <meta property="og:image" content="/assets/img/icon.jpg">
+  
+  <meta property="og:locale" content="ja">
 
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Schedule">
+  <meta name="twitter:description" content="今後3ヶ月の予定">
+  
+    <meta name="twitter:image" content="/assets/img/icon.jpg">
+  
+  
+    <meta name="twitter:site" content="@arugo___">
+    <meta name="twitter:creator" content="@arugo___">
+  
+
+
+
+  <!-- Schema.org -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Argo "
+        },
+        "url": "https://arugo11.github.io/pages/arugo11/schedule/",
+        "@type": "WebSite",
+        "description": "今後3ヶ月の予定",
+        "headline": "Schedule",
+        
+        "sameAs": ["https://github.com/arugo11", "https://twitter.com/arugo___"],
+        
+        "name": "Argo ",
+        "@context": "https://schema.org"
+    }
+  </script>
 
 
 
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/pages/arugo11/assets/css/bootstrap.min.css">
-<link
-  rel="stylesheet"
-  href=""
-  integrity=""
-  crossorigin="anonymous"
->
+<link rel="stylesheet" href="/pages/arugo11/assets/css/mdb.min.css">
 
 <!-- Bootstrap Table -->
 
 
 <!-- Fonts & Icons -->
 <link defer rel="stylesheet" href="/pages/arugo11/assets/css/academicons.min.css">
-<link
-  defer
-  rel="stylesheet"
-  type="text/css"
-  href=""
->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,13 +282,11 @@
             
           
             
-          
-            
               
                 
                 <li class="nav-item ">
                   
-                  <a class="nav-link" href="/pages/arugo11/classes/">classes
+                  <a class="nav-link" href="/pages/arugo11/cv/">cv
                     
                   </a>
                 </li>
@@ -226,17 +294,7 @@
             
           
             
-              
-                
-                <li class="nav-item active">
-                  
-                  <a class="nav-link" href="/pages/arugo11/schedule/">Schedule
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-                </li>
-              
+          
             
           
             
@@ -284,6 +342,13 @@
               
             
           
+          
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+              </button>
+            </li>
           
           
             <!-- Toogle theme mode -->
@@ -489,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       
       
-        Last updated: September 13, 2025.
+        Last updated: September 14, 2025.
       
     </div>
   </footer>
@@ -499,19 +564,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- JavaScripts -->
     <!-- jQuery -->
 <script
-  src="https://cdn.jsdelivr.net/npm/jquery@{{version}}/dist/jquery.min.js"
+  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"
 ></script>
 
-    <!-- Bootsrap & MDB scripts -->
+    <!-- Bootstrap scripts -->
 <script src="/pages/arugo11/assets/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="/pages/arugo11/assets/js/mdb.min.js"></script> -->
-<script
-  src=""
-  integrity=""
-  crossorigin="anonymous"
-></script>
 
     
 
@@ -686,6 +745,143 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
+  <script type="module" src="/pages/arugo11/assets/js/search/ninja-keys.min.js"></script>
+  <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
+  <script>
+    let searchTheme = determineComputedTheme();
+    const ninjaKeys = document.querySelector('ninja-keys');
+
+    if (searchTheme === 'dark') {
+      ninjaKeys.classList.add('dark');
+    } else {
+      ninjaKeys.classList.remove('dark');
+    }
+
+    const openSearchModal = () => {
+      // collapse navbarNav if expanded on mobile
+      const $navbarNav = $('#navbarNav');
+      if ($navbarNav.hasClass('show')) {
+        $navbarNav.collapse('hide');
+      }
+      ninjaKeys.open();
+    };
+  </script>
+  <script>
+    // get the ninja-keys element
+    const ninja = document.querySelector('ninja-keys');
+
+    // add the home and posts menu items
+    ninja.data = [{
+        id: "nav-about",
+        title: "about",
+        section: "Navigation",
+        handler: () => {
+          window.location.href = "/pages/arugo11/";
+        },
+      },{id: "nav-blog",
+              title: "blog",
+              description: "",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/pages/arugo11/blog/";
+              },
+            },{id: "nav-projects",
+              title: "projects",
+              description: "A growing collection of your cool projects.",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/pages/arugo11/projects/";
+              },
+            },{id: "nav-repositories",
+              title: "repositories",
+              description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/pages/arugo11/repositories/";
+              },
+            },{id: "nav-cv",
+              title: "cv",
+              description: "",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/pages/arugo11/cv/";
+              },
+            },{id: "dropdown-publications",
+                  title: "publications",
+                  description: "",
+                  section: "Dropdown",
+                  handler: () => {
+                    window.location.href = "";
+                  },
+                },{id: "dropdown-projects",
+                  title: "projects",
+                  description: "",
+                  section: "Dropdown",
+                  handler: () => {
+                    window.location.href = "";
+                  },
+                },{id: "dropdown-blog",
+                  title: "blog",
+                  description: "",
+                  section: "Dropdown",
+                  handler: () => {
+                    window.location.href = "/pages/arugo11/blog/";
+                  },
+                },{id: "projects-prism-政治記事の可視化ツール",
+              title: 'PRISM — 政治記事の可視化ツール',
+              description: "JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。",
+              section: "Projects",handler: () => {
+                  window.location.href = "/pages/arugo11/projects/prism-jphacks-2024/";
+                },},{id: "projects-松尾研-llm-開発コンペ-2025-dnaチーム-dpo班リーダー",
+              title: '松尾研 LLM 開発コンペ 2025 — DNAチーム DPO班リーダー',
+              description: "LLMの安全性向上を目的にDPOデータの合成と拡張を主導。タグを含む推論過程データ生成やHPC環境での大規模データ生成に取り組み、総合5位・DNA 3位・MVPを獲得。",
+              section: "Projects",handler: () => {
+                  window.location.href = "/pages/arugo11/projects/matsuo-llm-competition-2025/";
+                },},{id: "projects-swest27-インタラクティブセッション-自己検証ループによる高信頼な自然言語-ros2コマンドデータセット構築",
+              title: 'SWEST27 インタラクティブセッション — 自己検証ループによる高信頼な自然言語-ROS2コマンドデータセット構築',
+              description: "LLMが生成したROS2コマンドをGazebo上で自己検証し、SFT/DPO用データを自動構築。タスク達成率の向上と信頼性強化を実証。",
+              section: "Projects",handler: () => {
+                  window.location.href = "/pages/arugo11/projects/swest27-interactive-2025/";
+                },},{id: "projects-研究室での社会実装-ライブラリ開発",
+              title: '研究室での社会実装 — ライブラリ開発',
+              description: "研究成果の社会実装に向け、研究内容をライブラリ化。契約上の詳細は非公開だが、実用化を見据えコード品質と再利用性を重視して開発。",
+              section: "Projects",handler: () => {
+                  window.location.href = "/pages/arugo11/projects/lab-social-implementation-2025-09/";
+                },},{id: "projects-robocup-junior-rescue-line-センサ処理とnxt制御",
+              title: 'RoboCup Junior Rescue Line — センサ処理とNXT制御',
+              description: "ロボカップジュニア・レスキューラインでソフトウェア制御を担当。Arduinoで各種センサ値を取得しI2CでNXTへ連携、NXCで制御ロジックを実装。ノイズ対策とチーム開発の難しさを経験。",
+              section: "Projects",handler: () => {
+                  window.location.href = "/pages/arugo11/projects/robocup-rescue-line-2019-2025/";
+                },},{
+          id: 'light-theme',
+          title: 'Change theme to light',
+          description: 'Change the theme of the site to Light',
+          section: 'Theme',
+          handler: () => {
+            setThemeSetting("light");
+          },
+        },
+        {
+          id: 'dark-theme',
+          title: 'Change theme to dark',
+          description: 'Change the theme of the site to Dark',
+          section: 'Theme',
+          handler: () => {
+            setThemeSetting("dark");
+          },
+        },
+        {
+          id: 'system-theme',
+          title: 'Use system default theme',
+          description: 'Change the theme of the site to System Default',
+          section: 'Theme',
+          handler: () => {
+            setThemeSetting("system");
+          },
+        },];
+  </script>
+  <script src="/pages/arugo11/assets/js/shortcut-key.js"></script>
+
 
   </body>
 </html>

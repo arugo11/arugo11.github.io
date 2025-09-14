@@ -8,4 +8,5 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-seo-tag'
   gem 'jemoji'
+  gem 'jekyll-imagemagick'
 end
