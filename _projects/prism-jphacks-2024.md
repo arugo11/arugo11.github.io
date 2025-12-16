@@ -13,7 +13,7 @@ img: /assets/img/PRISM.png
 {% include figure.liquid path=page.img alt="PRISM thumbnail" sizes="(min-width: 768px) 720px, 100vw" %}
 
 <div class="mb-3">
-  <a class="btn btn-sm z-depth-0" href="{{ page.github }}" target="_blank">
+  <a class="btn btn-sm z-depth-0" href="https://github.com/jphacks/tk_2428" target="_blank">
     <i class="fa-brands fa-github"></i> GitHubで見る
   </a>
 </div>

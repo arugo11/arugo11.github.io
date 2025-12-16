@@ -39,24 +39,24 @@ img: /assets/img/11_award_09.jpg
 ## 関連資料
 
 <p>
-  <a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/2025_SWEST_嶋中.pdf' | relative_url }}" target="_blank" rel="noopener">
+  <a class="btn btn-sm z-depth-0" href="/assets/pdf/2025_SWEST_嶋中.pdf" target="_blank" rel="noopener">
     論文PDF
   </a>
-  <a class="btn btn-sm z-depth-0" href="{{ '/assets/pdf/swest_poster.pdf' | relative_url }}" target="_blank" rel="noopener" style="margin-left: 8px;">
+  <a class="btn btn-sm z-depth-0" href="/assets/pdf/swest_poster.pdf" target="_blank" rel="noopener" style="margin-left: 8px;">
     ポスターPDF
   </a>
 </p>
 
 <div class="mt-2">
   <h3>ポスター プレビュー</h3>
-  <object data="{{ '/assets/pdf/swest_poster.pdf' | relative_url }}" type="application/pdf" width="100%" height="600px">
-    <p>PDFを表示できません。<a href="{{ '/assets/pdf/swest_poster.pdf' | relative_url }}" target="_blank" rel="noopener">こちらからダウンロード</a>してください。</p>
+  <object data="/assets/pdf/swest_poster.pdf" type="application/pdf" width="100%" height="600px">
+    <p>PDFを表示できません。<a href="/assets/pdf/swest_poster.pdf" target="_blank" rel="noopener">こちらからダウンロード</a>してください。</p>
   </object>
 </div>
 
 <div class="mt-3">
   <h3>論文 プレビュー</h3>
-  <object data="{{ '/assets/pdf/2025_SWEST_嶋中.pdf' | relative_url }}" type="application/pdf" width="100%" height="600px">
-    <p>PDFを表示できません。<a href="{{ '/assets/pdf/2025_SWEST_嶋中.pdf' | relative_url }}" target="_blank" rel="noopener">こちらからダウンロード</a>してください。</p>
+  <object data="/assets/pdf/2025_SWEST_嶋中.pdf" type="application/pdf" width="100%" height="600px">
+    <p>PDFを表示できません。<a href="/assets/pdf/2025_SWEST_嶋中.pdf" target="_blank" rel="noopener">こちらからダウンロード</a>してください。</p>
   </object>
 </div>
