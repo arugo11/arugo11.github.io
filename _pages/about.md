@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 白衣と制服とピンク髪と銀髪が好きなモルモット
+subtitle: 芝浦工業大学 工学部 情報工学科 基盤システム研究室 / 関心: LLM, ロボット
 
 profile:
   align: right
@@ -10,29 +10,29 @@ profile:
   image_circular: false
   more_info: >
     <p>メールアドレス : al23088@shibaura-it.ac.jp</p>
-    <p>住所 : 東京都練馬区</p>
+    <p>住所 : 東京都</p>
 
 news: true
 selected_papers: false
 social: true
 ---
 
-工業大学生、TRPGが好き。
+芝浦工業大学 情報工学科 基盤システム研究室所属の学士学生。LLMの安全性・データ生成とロボティクスに関心があり、競技と研究の両輪で実験中。
+
+## ハイライト
+
+- SWEST27 インタラクティブセッション 研究開発部門 ベストポスター賞（2025-09） — <a href="/assets/pdf/2025_SWEST_%E5%B5%8B%E4%B8%AD.pdf">発表資料 PDF</a>
+- 松尾研 LLM 開発コンペ2025 DNAチーム DPO班リーダー MVP（総合5位・DoNotAnwer 3位）（2025-07） — <a href="/projects/matsuo-llm-competition-2025/">プロジェクト詳細</a>
 
 ## スキル
 
-- 言語: Python, C
-- 機械学習: PyTorch, scikit-learn
-- コンピュータビジョン: OpenCV
-- OS/環境: Ubuntu, WSL
-- 開発ツール: Git, pytest
+- 言語: Python（6年｜研究・競技）、C（3年｜組み込み課題）
+- 機械学習: PyTorch（3年｜DPO/LLM推論デバッグ）、scikit-learn（2年｜古典MLベースライン）
+- コンピュータビジョン: OpenCV（2年｜ロボットのライン追従・前処理）
+- ロボティクス: ROS 2（1年｜通信・制御ノード設計）
+- OS/環境: Ubuntu / WSL（3年｜開発環境）、Docker（1年｜再現環境）
+- 開発ツール: Git（3年）、pytest（2年）
 
-### 好きなツール / フレームワーク
-
-- PyTorch: 柔軟でデバッグしやすい
-- WSL: 手軽にUbuntuを使える
-- Vim: 軽量で見やすい
-- ROS 2: エコシステムが充実し通信仕様が明快
 
 ## 学歴
 
