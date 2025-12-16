@@ -11,3 +11,4 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'jekyll-imagemagick'
 end
+gem "faraday-retry", "~> 2.3"
