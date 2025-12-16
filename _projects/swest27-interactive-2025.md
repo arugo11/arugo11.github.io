@@ -35,6 +35,7 @@ img: /assets/img/11_award_09.jpg
 ## リンク
 
 - [イベント公式](https://swest.toppers.jp/phx/event)
+- [大学で紹介されました](https://www.shibaura-it.ac.jp/headline/award/20251016_7070_002.html)
 
 ## 関連資料
 
