@@ -166,9 +166,9 @@ plugins:
   - jekyll-imagemagick
   # - jekyll-minifier
   # - jekyll-paginate-v2
-  # - jekyll-scholar
+  - jekyll-scholar
   - jekyll-sitemap
-  # - jekyll-toc
+  - jekyll-toc
   - jemoji
 
 # 検索機能

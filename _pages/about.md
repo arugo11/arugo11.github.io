@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 芝浦工業大学 工学部 情報工学科 基盤システム研究室 / 関心: LLM, ロボット
+subtitle: "芝浦工業大学 工学部 情報工学科 基盤システム研究室 / 関心: LLM, ロボット"
 
 profile:
   align: right
