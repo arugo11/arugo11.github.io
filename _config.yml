@@ -77,8 +77,8 @@ google_site_verification:
 # Blog settings
 # -----------------------------------------------------------------------------
 
-blog_name: "Argo's Weekly Log"
-blog_description: "週に一度の活動記録"
+blog_name: "Logbook"
+blog_description: ""
 
 # ブログの表示設定
 latest_posts:
