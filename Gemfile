@@ -10,5 +10,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem 'jemoji'
   gem 'jekyll-imagemagick'
+  gem 'jekyll-toc'
+  gem 'jekyll-scholar'
 end
 gem "faraday-retry", "~> 2.3"
