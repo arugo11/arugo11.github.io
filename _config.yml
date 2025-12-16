@@ -49,9 +49,9 @@ og_image: /assets/img/icon.jpg
 # Social integration
 # -----------------------------------------------------------------------------
 
-discord_id: # あなたのDiscord ID
 twitter_username: # Deprecated; use x_username
 x_username: arugo___
+discord_id: argo___
 qiita_username: # あなたのQiita username
 
 github_username: arugo11
