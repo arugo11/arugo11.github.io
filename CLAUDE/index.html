@@ -16,12 +16,13 @@
   
   
     
-      PRISM — 政治記事の可視化ツール | Argo's log
+      CLAUDE.md | Argo's log
     
   
 </title>
 <meta name="author" content="Argo ">
-<meta name="description" content="JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。">
+<meta name="description" content="開発と日常の記録
+">
 
   <meta name="keywords" content="jekyll, blog, portfolio, tech blog">
 
@@ -33,9 +34,10 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="Argo's log">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Argo's log | PRISM — 政治記事の可視化ツール">
-  <meta property="og:url" content="https://arugo11.github.io/pages/arugo11/projects/prism-jphacks-2024/">
-  <meta property="og:description" content="JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。">
+  <meta property="og:title" content="Argo's log | CLAUDE.md">
+  <meta property="og:url" content="https://arugo11.github.io/pages/arugo11/CLAUDE/">
+  <meta property="og:description" content="開発と日常の記録
+">
   
     <meta property="og:image" content="/assets/img/icon.jpg">
   
@@ -43,8 +45,9 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="PRISM — 政治記事の可視化ツール">
-  <meta name="twitter:description" content="JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。">
+  <meta name="twitter:title" content="CLAUDE.md">
+  <meta name="twitter:description" content="開発と日常の記録
+">
   
     <meta name="twitter:image" content="/assets/img/icon.jpg">
   
@@ -101,10 +104,11 @@
             "@type": "Person",
             "name": "Argo "
         },
-        "url": "https://arugo11.github.io/pages/arugo11/projects/prism-jphacks-2024/",
+        "url": "https://arugo11.github.io/pages/arugo11/CLAUDE/",
         "@type": "WebSite",
-        "description": "JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。",
-        "headline": "PRISM — 政治記事の可視化ツール",
+        "description": "開発と日常の記録
+",
+        "headline": "CLAUDE.md",
         
         "sameAs": ["https://github.com/arugo11", "https://twitter.com/arugo___", "https://discord.com/users/argo___"],
         
@@ -152,7 +156,7 @@
   >
 
 <link rel="stylesheet" href="/pages/arugo11/assets/css/main.css">
-<link rel="canonical" href="https://arugo11.github.io/pages/arugo11/projects/prism-jphacks-2024/">
+<link rel="canonical" href="https://arugo11.github.io/pages/arugo11/CLAUDE/">
 
 <!-- Dark Mode -->
 <script src="/pages/arugo11/assets/js/theme.js"></script>
@@ -262,11 +266,9 @@
             
               
                 
-                <li class="nav-item active">
+                <li class="nav-item ">
                   
                   <a class="nav-link" href="/pages/arugo11/projects/">projects
-                    
-                      <span class="sr-only">(current)</span>
                     
                   </a>
                 </li>
@@ -386,77 +388,187 @@
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">PRISM — 政治記事の可視化ツール</h1>
-    <p class="post-description">JPHACKS 2024参加作品。記事本文/URLからClaude APIで関係性を抽出し、2D/3D相関図で可視化。</p>
+    <h1 class="post-title">CLAUDE.md</h1>
+    <p class="post-description"></p>
   </header>
 
   <article>
-    
-<figure>
-  <picture>
-    <!-- Auto scaling with imagemagick -->
-    <!--
-      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
-      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
-    -->
-    
-    <img src="/pages/arugo11/assets/img/PRISM.png" width="100%" height="auto" alt="PRISM thumbnail" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
-  </picture>
+    <h1 id="claudemd">CLAUDE.md</h1>
 
-  
-</figure>
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
 
-<div class="mb-3">
-  <a class="btn btn-sm z-depth-0" href="https://github.com/jphacks/tk_2428" target="_blank">
-    <i class="fa-brands fa-github"></i> GitHubで見る
-  </a>
-</div>
+<h2 id="project-overview">Project Overview</h2>
 
-<p>
-  <span class="badge bg-secondary">Python</span>
-  <span class="badge bg-secondary">Claude API</span>
-  <span class="badge bg-secondary">2D/3D Visualization</span>
-  <span class="badge bg-secondary">Backend</span>
-  <span class="badge bg-secondary">Team Lead</span>
-</p>
+<p>This is a personal website/blog built with Jekyll using the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme, hosted on GitHub Pages. The site content is primarily in Japanese.</p>
 
-<h2 id="概要">概要</h2>
+<p><strong>Site URL:</strong> https://arugo11.github.io</p>
 
-<p>大学2年の夏に JPHACKS に参加し、政治記事を直感的に理解できる可視化ツール「PRISM」を開発しました。記事本文やURLを入力すると Claude API により JSON を生成し、人物・政策・法令などの関係性を抽出して 2D・3D の相関図として表示します。</p>
+<h2 id="development-commands">Development Commands</h2>
 
-<h2 id="ハイライト">ハイライト</h2>
+<h3 id="local-development">Local Development</h3>
 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Install dependencies (first time only)</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Build the site</span>
+bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># Start local development server (serves at http://localhost:4000)</span>
+bundle <span class="nb">exec </span>jekyll serve
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note: There is no <code class="language-python highlighter-rouge"><span class="nb">bin</span><span class="o">/</span><span class="n">serve</span></code> script - use <code class="language-python highlighter-rouge"><span class="n">bundle</span> <span class="k">exec</span> <span class="n">jekyll</span> <span class="n">serve</span></code> directly.</p>
+
+<h3 id="building-and-deployment">Building and Deployment</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c"># Production build</span>
+bin/cibuild           <span class="c"># Equivalent to: bundle exec jekyll build</span>
+
+<span class="c"># Deploy to GitHub Pages (manual deployment)</span>
+bin/deploy            <span class="c"># Deploys from main branch to gh-pages branch</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Note:</strong> Automatic deployment is handled via GitHub Actions (<code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">deploy</span><span class="p">.</span><span class="n">yml</span></code>). Changes pushed to the main branch automatically trigger deployment.</p>
+
+<h3 id="code-formatting">Code Formatting</h3>
+
+<p>The project uses Prettier for code formatting. The GitHub workflow (<code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">prettier</span><span class="p">.</span><span class="n">yml</span></code>) runs automatically on commits.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c"># Format code manually</span>
+npm <span class="nb">install
+</span>npx prettier <span class="nb">.</span> <span class="nt">--write</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="content-structure">Content Structure</h2>
+
+<h3 id="blog-posts-_posts">Blog Posts (<code class="language-python highlighter-rouge"><span class="n">_posts</span><span class="o">/</span></code>)</h3>
 <ul>
-  <li>記事本文/URLからの関係抽出と可視化の一連のパイプラインを設計</li>
-  <li>Claude APIによるJSON生成→グラフ抽出→2D/3D相関図レンダリング</li>
-  <li>安定動作のための3D描画調整とデータ処理の堅牢化</li>
+  <li>Blog posts use the naming format: <code class="language-python highlighter-rouge"><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="o">-</span><span class="n">title</span><span class="p">.</span><span class="n">md</span></code></li>
+  <li>Front matter required: <code class="language-python highlighter-rouge"><span class="n">title</span></code>, <code class="language-python highlighter-rouge"><span class="n">date</span></code>, <code class="language-python highlighter-rouge"><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></code>, <code class="language-python highlighter-rouge"><span class="n">categories</span></code>, <code class="language-python highlighter-rouge"><span class="n">tags</span></code>, <code class="language-python highlighter-rouge"><span class="n">description</span></code>, <code class="language-python highlighter-rouge"><span class="n">image</span></code></li>
+  <li>Use <code class="language-python highlighter-rouge"><span class="n">_templates</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="n">template</span><span class="p">.</span><span class="n">md</span></code> as a starting point for new posts</li>
+  <li>Permalink format: <code class="language-python highlighter-rouge"><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="p">:</span><span class="n">year</span><span class="o">/</span><span class="p">:</span><span class="n">title</span><span class="o">/</span></code></li>
 </ul>
 
-<h2 id="期間--体制--役割">期間 / 体制 / 役割</h2>
-
+<h3 id="news-_news">News (<code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code>)</h3>
 <ul>
-  <li>期間: 2024年10月</li>
-  <li>体制: 4名（ドキュメント・テスト1、フロント2、バックエンド兼リード1）</li>
-  <li>役割: 開発リーダー兼バックエンド担当</li>
+  <li>News/announcements are stored in <code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code> directory</li>
+  <li>Uses the same markdown format as blog posts</li>
+  <li>Permalink format: <code class="language-python highlighter-rouge"><span class="o">/</span><span class="n">news</span><span class="o">/</span><span class="p">:</span><span class="n">path</span><span class="o">/</span></code></li>
 </ul>
 
-<h2 id="主な貢献">主な貢献</h2>
-
+<h3 id="projects-_projects">Projects (<code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code>)</h3>
 <ul>
-  <li>JSON データ処理の設計・実装</li>
-  <li>Claude API との連携部分の実装</li>
-  <li>3D 表示の安定化（レイアウト・パフォーマンス調整）</li>
-  <li>タスク管理と役割分担の推進</li>
+  <li>Project showcase entries in <code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code> directory</li>
+  <li>Categories defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code> under <code class="language-python highlighter-rouge"><span class="n">project_categories</span></code></li>
 </ul>
 
-<h2 id="得られた学び">得られた学び</h2>
+<h3 id="pages-_pages">Pages (<code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code>)</h3>
+<ul>
+  <li>Static pages like about, blog index, projects, etc.</li>
+  <li>Each page has a corresponding <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">md</span></code> file in <code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code></li>
+</ul>
 
-<p>短期間での開発における意思決定と優先順位付け、リーダーシップの重要性を体感し、実装力を強化しました。</p>
+<h2 id="site-configuration">Site Configuration</h2>
 
-<h2 id="リポジトリ">リポジトリ</h2>
+<p>Main configuration is in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>:</p>
 
 <ul>
-  <li>GitHub: https://github.com/jphacks/tk_2428</li>
+  <li><strong>Language:</strong> Japanese (<code class="language-python highlighter-rouge"><span class="n">lang</span><span class="p">:</span> <span class="n">ja</span></code>)</li>
+  <li><strong>Blog name:</strong> “Logbook”</li>
+  <li><strong>Navigation:</strong> Defined in <code class="language-python highlighter-rouge"><span class="n">navbar_pages</span></code> section</li>
+  <li><strong>Collections:</strong> <code class="language-python highlighter-rouge"><span class="n">news</span></code> and <code class="language-python highlighter-rouge"><span class="n">projects</span></code> are custom collections</li>
+  <li><strong>Plugins:</strong> jekyll-archives, jekyll-feed, jekyll-scholar, jekyll-toc, jemoji, etc.</li>
+</ul>
+
+<h3 id="key-configuration-sections">Key Configuration Sections</h3>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">blog_name</span></code>: Blog section title</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">latest_posts</span><span class="p">.</span><span class="n">limit</span></code>: Number of posts shown on homepage (default: 5)</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">display_tags</span></code>: Tags shown in the blog sidebar</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">giscus</span></code>: GitHub Discussions-based commenting system (enabled for Japanese)</li>
+</ul>
+
+<h2 id="theme-customization">Theme Customization</h2>
+
+<ul>
+  <li><strong>Color theme:</strong> Custom cream color <code class="language-python highlighter-rouge"><span class="c1">#F6ECD4</span></code> defined in <code class="language-python highlighter-rouge"><span class="n">colors</span><span class="p">.</span><span class="n">cream</span></code></li>
+  <li><strong>Styles:</strong> Located in <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span></code> directory</li>
+  <li><strong>Layouts:</strong> Liquid templates in <code class="language-python highlighter-rouge"><span class="n">_layouts</span><span class="o">/</span></code> (default, post, page, about, etc.)</li>
+  <li><strong>Includes:</strong> Reusable components in <code class="language-python highlighter-rouge"><span class="n">_includes</span><span class="o">/</span></code> (header, footer, social, etc.)</li>
+  <li><strong>Assets:</strong> Static assets in <code class="language-python highlighter-rouge"><span class="n">assets</span><span class="o">/</span></code> (images, CSS, JS, fonts)</li>
+</ul>
+
+<h3 id="layout-types">Layout Types</h3>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">default</span><span class="p">.</span><span class="n">liquid</span></code>: Base layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">post</span><span class="p">.</span><span class="n">liquid</span></code>: Blog post layout with TOC support</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">page</span><span class="p">.</span><span class="n">liquid</span></code>: Static page layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">about</span><span class="p">.</span><span class="n">liquid</span></code>: About/profile page layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">distill</span><span class="p">.</span><span class="n">liquid</span></code>: Distill publication format</li>
+</ul>
+
+<h2 id="special-features">Special Features</h2>
+
+<ul>
+  <li><strong>TOC (Table of Contents):</strong> Enabled via <code class="language-python highlighter-rouge"><span class="n">jekyll</span><span class="o">-</span><span class="n">toc</span></code> plugin</li>
+  <li><strong>MathJax:</strong> Enabled (<code class="language-python highlighter-rouge"><span class="n">enable_math</span><span class="p">:</span> <span class="n">true</span></code>)</li>
+  <li><strong>Dark Mode:</strong> Enabled (<code class="language-python highlighter-rouge"><span class="n">enable_darkmode</span><span class="p">:</span> <span class="n">true</span></code>)</li>
+  <li><strong>Comments:</strong> Giscus (GitHub Discussions) integration</li>
+  <li><strong>Search:</strong> Built-in search functionality enabled</li>
+  <li><strong>Image lazy loading:</strong> Enabled</li>
+</ul>
+
+<h2 id="deployment-workflow">Deployment Workflow</h2>
+
+<ol>
+  <li>Push changes to <code class="language-python highlighter-rouge"><span class="n">main</span></code> branch</li>
+  <li>GitHub Actions workflow <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">deploy</span><span class="p">.</span><span class="n">yml</span></code> triggers automatically</li>
+  <li>Site is built and deployed to GitHub Pages</li>
+  <li>Deployed from <code class="language-python highlighter-rouge"><span class="n">gh</span><span class="o">-</span><span class="n">pages</span></code> branch</li>
+</ol>
+
+<h2 id="files-to-exclude">Files to Exclude</h2>
+
+<p>The following are excluded from the build (defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>):</p>
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">_site</span><span class="o">/</span></code> (build output directory)</li>
+  <li><code class="language-python highlighter-rouge"><span class="nb">bin</span><span class="o">/</span></code>, <code class="language-python highlighter-rouge"><span class="n">vendor</span><span class="o">/</span></code> (development dependencies)</li>
+  <li>Documentation files (README.md, CONTRIBUTING.md, CUSTOMIZE.md, etc.)</li>
+  <li>Docker files</li>
+</ul>
+
+<h2 id="custom-data-files">Custom Data Files</h2>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">_data</span><span class="o">/</span><span class="n">schedule</span><span class="p">.</span><span class="n">yml</span></code>: Stores schedule/calendar events data. Events are structured as YAML objects consumed by the schedule page.</li>
+</ul>
+
+<h2 id="custom-styles">Custom Styles</h2>
+
+<p>The <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span><span class="n">_custom</span><span class="p">.</span><span class="n">scss</span></code> file defines site-specific styles:</p>
+<ul>
+  <li><strong>Theme colors</strong>: Cream color <code class="language-python highlighter-rouge"><span class="c1">#F6ECD4</span></code> for light mode, dark mode colors</li>
+  <li><strong>Custom components</strong>: <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">post</span><span class="o">-</span><span class="n">card</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">weekly</span><span class="o">-</span><span class="n">log</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">trpg</span><span class="o">-</span><span class="n">session</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">ml</span><span class="o">-</span><span class="n">article</span></code></li>
+  <li><strong>Calendar styles</strong>: FullCalendar customization via <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">fc</span></code> classes</li>
+  <li><strong>Project cards</strong>: 16:9 aspect ratio for <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">card</span><span class="o">-</span><span class="n">img</span><span class="o">-</span><span class="n">top</span></code></li>
 </ul>
 
   </article>
