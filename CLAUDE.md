@@ -50,21 +50,25 @@ npx prettier . --write
 ## Content Structure
 
 ### Blog Posts (`_posts/`)
+
 - Blog posts use the naming format: `YYYY-MM-DD-title.md`
 - Front matter required: `title`, `date`, `layout: post`, `categories`, `tags`, `description`, `image`
 - Use `_templates/post-template.md` as a starting point for new posts
 - Permalink format: `/blog/:year/:title/`
 
 ### News (`_news/`)
+
 - News/announcements are stored in `_news/` directory
 - Uses the same markdown format as blog posts
 - Permalink format: `/news/:path/`
 
 ### Projects (`_projects/`)
+
 - Project showcase entries in `_projects/` directory
 - Categories defined in `_config.yml` under `project_categories`
 
 ### Pages (`_pages/`)
+
 - Static pages like about, blog index, projects, etc.
 - Each page has a corresponding `.md` file in `_pages/`
 
@@ -120,6 +124,7 @@ Main configuration is in `_config.yml`:
 ## Files to Exclude
 
 The following are excluded from the build (defined in `_config.yml`):
+
 - `_site/` (build output directory)
 - `bin/`, `vendor/` (development dependencies)
 - Documentation files (README.md, CONTRIBUTING.md, CUSTOMIZE.md, etc.)
@@ -132,6 +137,7 @@ The following are excluded from the build (defined in `_config.yml`):
 ## Custom Styles
 
 The `_sass/_custom.scss` file defines site-specific styles:
+
 - **Theme colors**: Cream color `#F6ECD4` for light mode, dark mode colors
 - **Custom components**: `.post-card`, `.weekly-log`, `.trpg-session`, `.ml-article`
 - **Calendar styles**: FullCalendar customization via `.fc` classes

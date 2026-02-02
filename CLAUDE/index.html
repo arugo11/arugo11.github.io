@@ -458,6 +458,7 @@ npm <span class="nb">install
 <h2 id="content-structure">Content Structure</h2>
 
 <h3 id="blog-posts-_posts">Blog Posts (<code class="language-python highlighter-rouge"><span class="n">_posts</span><span class="o">/</span></code>)</h3>
+
 <ul>
   <li>Blog posts use the naming format: <code class="language-python highlighter-rouge"><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="o">-</span><span class="n">title</span><span class="p">.</span><span class="n">md</span></code></li>
   <li>Front matter required: <code class="language-python highlighter-rouge"><span class="n">title</span></code>, <code class="language-python highlighter-rouge"><span class="n">date</span></code>, <code class="language-python highlighter-rouge"><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></code>, <code class="language-python highlighter-rouge"><span class="n">categories</span></code>, <code class="language-python highlighter-rouge"><span class="n">tags</span></code>, <code class="language-python highlighter-rouge"><span class="n">description</span></code>, <code class="language-python highlighter-rouge"><span class="n">image</span></code></li>
@@ -466,6 +467,7 @@ npm <span class="nb">install
 </ul>
 
 <h3 id="news-_news">News (<code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code>)</h3>
+
 <ul>
   <li>News/announcements are stored in <code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code> directory</li>
   <li>Uses the same markdown format as blog posts</li>
@@ -473,12 +475,14 @@ npm <span class="nb">install
 </ul>
 
 <h3 id="projects-_projects">Projects (<code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code>)</h3>
+
 <ul>
   <li>Project showcase entries in <code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code> directory</li>
   <li>Categories defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code> under <code class="language-python highlighter-rouge"><span class="n">project_categories</span></code></li>
 </ul>
 
 <h3 id="pages-_pages">Pages (<code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code>)</h3>
+
 <ul>
   <li>Static pages like about, blog index, projects, etc.</li>
   <li>Each page has a corresponding <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">md</span></code> file in <code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code></li>
@@ -548,6 +552,7 @@ npm <span class="nb">install
 <h2 id="files-to-exclude">Files to Exclude</h2>
 
 <p>The following are excluded from the build (defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>):</p>
+
 <ul>
   <li><code class="language-python highlighter-rouge"><span class="n">_site</span><span class="o">/</span></code> (build output directory)</li>
   <li><code class="language-python highlighter-rouge"><span class="nb">bin</span><span class="o">/</span></code>, <code class="language-python highlighter-rouge"><span class="n">vendor</span><span class="o">/</span></code> (development dependencies)</li>
@@ -564,6 +569,7 @@ npm <span class="nb">install
 <h2 id="custom-styles">Custom Styles</h2>
 
 <p>The <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span><span class="n">_custom</span><span class="p">.</span><span class="n">scss</span></code> file defines site-specific styles:</p>
+
 <ul>
   <li><strong>Theme colors</strong>: Cream color <code class="language-python highlighter-rouge"><span class="c1">#F6ECD4</span></code> for light mode, dark mode colors</li>
   <li><strong>Custom components</strong>: <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">post</span><span class="o">-</span><span class="n">card</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">weekly</span><span class="o">-</span><span class="n">log</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">trpg</span><span class="o">-</span><span class="n">session</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">ml</span><span class="o">-</span><span class="n">article</span></code></li>
