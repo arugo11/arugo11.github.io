@@ -78,7 +78,7 @@ google_site_verification:
 # -----------------------------------------------------------------------------
 
 blog_name: "Logbook"
-blog_description: ""
+blog_description: "開発と日常の記録を綴るブログ"
 
 # ブログの表示設定
 latest_posts:
@@ -184,7 +184,7 @@ search:
 
 # プロフィール画像の設定
 profile:
-  image: profile.jpg # 実際の画像ファイル名に変更してください
+  image: icon.jpg
   image_circular: false
   address: >
     <p>工業大学生。</p>

@@ -125,35 +125,6 @@ h3 {
   }
 }
 
-// カレンダーのカスタマイズ
-.fc {
-  --fc-border-color: #e8dcc4;
-  --fc-button-bg-color: #4a3d39;
-  --fc-button-border-color: #4a3d39;
-  --fc-button-hover-bg-color: #3a2d29;
-  --fc-button-hover-border-color: #3a2d29;
-  --fc-today-bg-color: #f6ecd4;
-  --fc-event-bg-color: #4a3d39;
-  --fc-event-border-color: #4a3d39;
-
-  .fc-button {
-    text-transform: none;
-  }
-
-  .fc-toolbar-title {
-    font-size: 1.2em;
-  }
-}
-
-.fc-event {
-  cursor: pointer;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.9;
-  }
-}
-
 // モーダルのスタイル
 .modal-content {
   background-color: #f6ecd4;

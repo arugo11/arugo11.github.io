@@ -17,8 +17,6 @@ selected_papers: false
 social: true
 ---
 
-
-
 ## ハイライト
 
 - SWEST27 インタラクティブセッション 研究開発部門 ベストポスター賞（2025-09） — <a href="/assets/pdf/2025_SWEST_%E5%B5%8B%E4%B8%AD.pdf">発表資料 PDF</a>
@@ -32,7 +30,6 @@ social: true
 - ロボティクス: ROS 2（1年｜通信・制御ノード設計）
 - OS/環境: Ubuntu / WSL（3年｜開発環境）、Docker（1年｜再現環境）
 - 開発ツール: Git（3年）、pytest（2年）
-
 
 ## 学歴
 
