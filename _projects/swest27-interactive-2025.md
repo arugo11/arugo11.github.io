@@ -3,6 +3,7 @@ title: SWEST27 インタラクティブセッション — 自己検証ループ
 description: LLMが生成したROS2コマンドをGazebo上で自己検証し、SFT/DPO用データを自動構築。タスク達成率の向上と信頼性強化を実証。
 date: 2025-07-01
 importance: 3
+featured: true
 layout: page
 permalink: /projects/swest27-interactive-2025/
 img: /assets/img/11_award_09.jpg

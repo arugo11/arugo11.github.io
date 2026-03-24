@@ -2,7 +2,7 @@
 layout: page
 permalink: /classes/
 title: classes
-description: Materials for courses you taught. Replace this text with your description.
+description: 学習記録や授業メモのための補助ページです。
 nav: false
 nav_exclude: true
 nav_order: 6

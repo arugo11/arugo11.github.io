@@ -3,6 +3,7 @@ title: RoboCup Junior Rescue Line — センサ処理とNXT制御
 description: ロボカップジュニア・レスキューラインでソフトウェア制御を担当。Arduinoで各種センサ値を取得しI2CでNXTへ連携、NXCで制御ロジックを実装。ノイズ対策とチーム開発の難しさを経験。
 date: 2025-09-01
 importance: 1
+featured: false
 layout: page
 permalink: /projects/robocup-rescue-line-2019-2025/
 img: /assets/img/robocupjunior.png

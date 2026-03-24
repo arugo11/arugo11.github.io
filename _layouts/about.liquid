@@ -1,80 +1,93 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+{% assign featured_projects = site.projects | where: 'featured', true | sort: 'importance' | reverse %}
+{% assign latest_posts_count = site.posts | size %}
+{% assign latest_news_count = site.news | size %}
 
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+<div class="portfolio-shell">
+  <section class="portfolio-masthead">
+    <div class="portfolio-masthead__main">
+      <p class="portfolio-kicker">{{ page.hero_label }}</p>
+      <h1 class="portfolio-masthead__title">{{ page.hero_title }}</h1>
+      <p class="portfolio-masthead__lead">{{ page.subtitle }}</p>
+      <p class="portfolio-masthead__summary">{{ page.hero_summary }}</p>
+
+      <div class="portfolio-masthead__actions">
+        <a class="btn btn-sm z-depth-0" href="{{ '/projects/' | relative_url }}">プロジェクト一覧</a>
+        <a class="btn btn-sm z-depth-0" href="{{ '/cv/' | relative_url }}">CV</a>
+        <a class="btn btn-sm z-depth-0" href="mailto:{{ site.email }}">メールする</a>
       </div>
-    {% endif %}
+    </div>
+  </section>
 
-    <div class="clearfix">{{ content }}</div>
+  <section class="portfolio-editorial">
+    <div class="portfolio-editorial__main">
+      {{ content }}
+    </div>
+  </section>
 
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
+  <section class="portfolio-block">
+    <div class="portfolio-block__header">
+      <p class="portfolio-kicker">主要実績</p>
+      <h2>主要実績</h2>
+      <p>受賞や発表を含めて、今の関心や役割が伝わるものを先に並べています。</p>
+    </div>
+
+    <div class="portfolio-project-list">
+      {% for project in featured_projects limit: 4 %}
+        <a class="portfolio-project-row" href="{{ project.url | relative_url }}">
+          <div class="portfolio-project-row__meta">
+            <span>{{ project.date | date: '%Y' }}</span>
+          </div>
+          <div class="portfolio-project-row__body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description | strip_html }}</p>
+          </div>
+          <div class="portfolio-project-row__arrow">
+            <span>詳細を見る</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if page.news and site.announcements.enabled and latest_news_count > 0 %}
+    <section class="portfolio-block">
+      <div class="portfolio-block__header">
+        <p class="portfolio-kicker">近況</p>
+        <h2>最近のトピック</h2>
+      </div>
       {% include news.liquid limit=true %}
-    {% endif %}
+    </section>
+  {% endif %}
 
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
+  <section class="portfolio-split">
+    <section class="portfolio-block portfolio-block--tight">
+      <div class="portfolio-block__header">
+        <p class="portfolio-kicker">発信</p>
+        <h2>発信</h2>
       </div>
-    {% endif %}
+      {% if site.latest_posts.enabled and latest_posts_count > 0 %}
+        {% include latest_posts.liquid %}
+      {% else %}
+        <div class="portfolio-quiet">
+          <p>ブログは準備中です。公開できる研究メモや開発ログから順に追加していきます。</p>
+        </div>
+      {% endif %}
+    </section>
 
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
+    {% if page.social %}
+      <section class="portfolio-block portfolio-block--tight">
+        <div class="portfolio-block__header">
+          <p class="portfolio-kicker">連絡先</p>
+          <h2>連絡先</h2>
+          <p>{{ site.contact_note }}</p>
+        </div>
+        <div class="social">
+          <div class="contact-icons">{% include social.liquid %}</div>
+        </div>
+      </section>
     {% endif %}
-  </article>
+  </section>
 </div>

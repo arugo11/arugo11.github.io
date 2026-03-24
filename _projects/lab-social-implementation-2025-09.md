@@ -3,6 +3,7 @@ title: 研究室での社会実装 — ライブラリ開発
 description: 研究成果の社会実装に向け、研究内容をライブラリ化。契約上の詳細は非公開だが、実用化を見据えコード品質と再利用性を重視して開発。
 date: 2025-09-01
 importance: 2
+featured: false
 layout: page
 permalink: /projects/lab-social-implementation-2025-09/
 ---

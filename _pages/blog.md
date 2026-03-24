@@ -3,7 +3,7 @@ layout: default
 permalink: /blog/
 title: blog
 nav: true
-nav_order: 1
+nav_order: 3
 pagination:
   enabled: true
   collection: posts
@@ -20,6 +20,7 @@ pagination:
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
+{% assign post_count = site.posts | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
@@ -29,6 +30,7 @@ pagination:
   </div>
   {% endif %}
 
+{% if post_count > 0 %}
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
 
   <div class="tag-category-list">
@@ -54,7 +56,8 @@ pagination:
       {% endfor %}
     </ul>
   </div>
-  {% endif %}
+{% endif %}
+{% endif %}
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
@@ -101,6 +104,12 @@ pagination:
 
 {% endif %}
 
+  {% if post_count == 0 %}
+    <div class="portfolio-empty-state">
+      <i class="ti ti-notebook"></i>
+      <p>まだ公開している記事はありません。今後は研究メモや開発ログをここにまとめていきます。</p>
+    </div>
+  {% else %}
   <ul class="post-list">
 
     {% if page.pagination.enabled %}
@@ -188,8 +197,9 @@ pagination:
     {% endfor %}
 
   </ul>
+  {% endif %}
 
-{% if page.pagination.enabled %}
+{% if page.pagination.enabled and post_count > 0 %}
 {% include pagination.liquid %}
 {% endif %}
 

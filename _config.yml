@@ -11,8 +11,8 @@ description: >
   開発と日常の記録
 
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and hosted on
+  <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
 
 keywords: jekyll, blog, portfolio, tech blog
 lang: ja
@@ -67,7 +67,7 @@ blogger_url:
 work_url:
 
 contact_note: >
-  The best way to reach me is via email.
+  お問い合わせはメールか GitHub / X の DM からお願いします。
 
 google_analytics:
 panelbear_analytics:
@@ -85,6 +85,11 @@ latest_posts:
   enabled: true
   scrollable: true
   limit: 5 # トップページに表示する最新記事数
+
+announcements:
+  enabled: true
+  scrollable: false
+  limit: 5
 
 permalink: /blog/:year/:title/
 
@@ -274,37 +279,6 @@ imagemagick:
 
 #   sort_by: year,month
 #   order: descending
-
-# -----------------------------------------------------------------------------
-# Navigation bar
-# -----------------------------------------------------------------------------
-
-navbar_pages:
-  - name: about
-    url: /
-  - name: blog
-    url: /blog/
-  - name: projects
-    url: /projects/
-  - name: repositories
-    url: /repositories/
-  - name: classes
-    url: /classes/
-  - name: schedule
-    url: /schedule/
-
-# ナビゲーションから該当セクションを除外
-nav_exclude:
-  - /cv/
-  - /people/
-
-  # -----------------------------------------------------------------------------
-# Submenus
-# -----------------------------------------------------------------------------
-
-submenus:
-  - title: Schedule
-    url: /schedule/
 
 # リポジトリ設定を追加
 repository: arugo11/arugo11.github.io
