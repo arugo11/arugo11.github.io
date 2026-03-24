@@ -51,16 +51,16 @@
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
             {% if p.nav and p.autogen == null and p.permalink != '/' %}
-                {% assign parent_link = p.permalink | remove: 'index.html' %}
-                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                  {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
-                  <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
-                    {% if page.url contains p.url %}
-                      <span class="sr-only">(current)</span>
-                    {% endif %}
-                  </a>
-                </li>
+              {% assign parent_link = p.permalink | remove: 'index.html' %}
+              <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
+                <a class="nav-link" href="{{ url | relative_url }}">
+                  {{- p.title }}
+                  {% if page.url contains p.url %}
+                    <span class="sr-only">(current)</span>
+                  {% endif %}
+                </a>
+              </li>
             {% endif %}
           {% endfor %}
           {% if site.search_enabled %}

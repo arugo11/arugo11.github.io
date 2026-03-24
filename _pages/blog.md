@@ -104,12 +104,13 @@ pagination:
 
 {% endif %}
 
-  {% if post_count == 0 %}
-    <div class="portfolio-empty-state">
-      <i class="ti ti-notebook"></i>
-      <p>まだ公開している記事はありません。今後は研究メモや開発ログをここにまとめていきます。</p>
-    </div>
-  {% else %}
+{% if post_count == 0 %}
+<div class="portfolio-empty-state">
+  <i class="ti ti-notebook"></i>
+  <p>まだ公開している記事はありません。今後は研究メモや開発ログをここにまとめていきます。</p>
+</div>
+{% else %}
+
   <ul class="post-list">
 
     {% if page.pagination.enabled %}
@@ -197,7 +198,7 @@ pagination:
     {% endfor %}
 
   </ul>
-  {% endif %}
+{% endif %}
 
 {% if page.pagination.enabled and post_count > 0 %}
 {% include pagination.liquid %}
