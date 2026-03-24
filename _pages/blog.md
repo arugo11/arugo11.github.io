@@ -105,6 +105,7 @@ pagination:
 {% endif %}
 
 {% if post_count == 0 %}
+
 <div class="portfolio-empty-state">
   <i class="ti ti-notebook"></i>
   <p>まだ公開している記事はありません。今後は研究メモや開発ログをここにまとめていきます。</p>
