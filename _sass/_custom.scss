@@ -1,12 +1,12 @@
 // _sass/_custom.scss
 
-// カスタムカラー変数
+// Custom color variables
 :root {
   --theme-cream: #f6ecd4;
   --global-bg-color: #{var(--theme-cream)};
 }
 
-// ライトモード用のスタイル
+// Light mode styles
 .light {
   --global-bg-color: var(--theme-cream);
   --global-text-color: #2c3e50;
@@ -14,7 +14,7 @@
   --global-hover-color: #425b75;
 }
 
-// ダークモード用のスタイル
+// Dark mode styles
 .dark {
   --global-bg-color: #202124;
   --global-text-color: #ffffff;
@@ -22,12 +22,12 @@
   --global-hover-color: #aec7f4;
 }
 
-// カスタムスタイル
+// Custom styles
 body {
   background-color: var(--global-bg-color);
 }
 
-// ブログカード用のスタイル
+// Blog card styles
 .post-card {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,14 +38,14 @@ body {
   }
 }
 
-// 週記用のスタイル
+// Weekly log styles
 .weekly-log {
   border-left: 4px solid var(--global-theme-color);
   padding-left: 1rem;
   margin: 1rem 0;
 }
 
-// TRPGセッション記録用のスタイル
+// TRPG session record styles
 .trpg-session {
   background: rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
@@ -58,8 +58,8 @@ body {
   }
 }
 
-// リンク風ボタンの可読性改善（ダーク/ライト両対応）
-// 例: <a class="btn btn-sm z-depth-0">...</a>
+// Link-style button readability (dark/light compatible)
+// e.g. <a class="btn btn-sm z-depth-0">...</a>
 a.btn.z-depth-0 {
   color: var(--global-text-color) !important;
   border: 1px solid var(--global-text-color) !important;
@@ -73,7 +73,7 @@ a.btn.z-depth-0 {
   }
 }
 
-// 強化学習関連の記事用のスタイル
+// Reinforcement learning article styles
 .ml-article {
   .formula {
     background: rgba(0, 0, 0, 0.02);
@@ -86,7 +86,7 @@ a.btn.z-depth-0 {
   }
 }
 
-// カジュアルな見出しスタイル
+// Casual heading styles
 h1,
 h2,
 h3 {
@@ -103,7 +103,7 @@ h3 {
     opacity: 0.5;
   }
 }
-// カレンダーのカスタマイズ
+// Calendar customization
 .fc {
   --fc-border-color: #e8dcc4;
   --fc-button-bg-color: #4a3d39;
@@ -115,7 +115,7 @@ h3 {
   --fc-event-border-color: #4a3d39;
 }
 
-// イベントのスタイル
+// Event styles
 .fc-event {
   cursor: pointer;
   transition: opacity 0.2s;
@@ -125,7 +125,7 @@ h3 {
   }
 }
 
-// モーダルのスタイル
+// Modal styles
 .modal-content {
   background-color: #f6ecd4;
 }
