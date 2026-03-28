@@ -1,5 +1,5 @@
 ---
-title: 松尾研 LLM 開発コンペ 2025 — DNAチーム DPO班リーダー
+title: 松尾研 LLM 開発コンペ 2025 MVP受賞
 description: LLMの安全性向上を目的にDPOデータの合成と拡張を主導。<think>タグを含む推論過程データ生成やHPC環境での大規模データ生成に取り組み、総合5位・DNA 3位・MVPを獲得。
 date: 2025-07-01
 importance: 4
