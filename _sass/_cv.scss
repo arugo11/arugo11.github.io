@@ -197,7 +197,7 @@ ul.timeline li::before {
 }
 
 /*ul.timeline::before {
-     content: "●";
+     content: "\\2022";
      font-size: 1em;
      display: inline-block;
      margin: 0;
@@ -208,7 +208,7 @@ ul.timeline li::before {
      color: var(--global-text-color);
 }
  ul.timeline::after {
-     content: "●";
+     content: "\\2022";
      font-size: 1em;
      display: inline-block;
      margin: 0;
