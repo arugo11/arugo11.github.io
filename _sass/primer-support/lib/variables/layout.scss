@@ -11,15 +11,7 @@
 //    5 => 32px
 //    6 => 40px
 $spacer: 8px !default;
-$spacers: (
-  0,
-  round($spacer / 2),
-  $spacer,
-  $spacer * 2,
-  $spacer * 3,
-  $spacer * 4,
-  $spacer * 5
-) !default;
+$spacers: (0, round($spacer / 2), $spacer, $spacer * 2, $spacer * 3, $spacer * 4, $spacer * 5) !default;
 
 // Aliases for easy use
 $spacer-0: nth($spacers, 1) !default; // 0
@@ -32,15 +24,15 @@ $spacer-6: nth($spacers, 7) !default; // 40px
 
 // Em spacer variables
 $em-spacer-1: 0.0625em !default; // 1/16
-$em-spacer-2: 0.125em !default;  // 1/8
-$em-spacer-3: 0.25em !default;   // 1/4
-$em-spacer-4: 0.375em !default;  // 3/8
-$em-spacer-5: 0.5em !default;    // 1/2
-$em-spacer-6: 0.75em !default;   // 3/4
+$em-spacer-2: 0.125em !default; // 1/8
+$em-spacer-3: 0.25em !default; // 1/4
+$em-spacer-4: 0.375em !default; // 3/8
+$em-spacer-5: 0.5em !default; // 1/2
+$em-spacer-6: 0.75em !default; // 3/4
 
 // Fixed-width container variables
 $container-width: 980px !default;
-$grid-gutter:     10px !default;
+$grid-gutter: 10px !default;
 
 // Breakpoint widths
 $width-xs: 0;
@@ -66,7 +58,14 @@ $breakpoints: (
   xl: $width-xl
 ) !default;
 
-$responsive-variants: ("": "");
+$responsive-variants: (
+  "": "",
+);
 @each $key in map-keys($breakpoints) {
-  $responsive-variants: map-merge($responsive-variants, ($key: "-#{$key}"));
+  $responsive-variants: map-merge(
+    $responsive-variants,
+    (
+      $key: "-#{$key}",
+    )
+  );
 }

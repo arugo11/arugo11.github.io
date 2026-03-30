@@ -96,7 +96,9 @@
 }
 
 @keyframes grow-x {
-  to { width: 100%; }
+  to {
+    width: 100%;
+  }
 }
 
 /* Shrink an element from 100% to 0% */
@@ -109,7 +111,9 @@
 }
 
 @keyframes shrink-x {
-  to { width: 0%; }
+  to {
+    width: 0%;
+  }
 }
 
 /* Fade in an element and scale it fast */

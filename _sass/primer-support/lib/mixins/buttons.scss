@@ -39,7 +39,6 @@
       border-color: transparentize($black, 0.8); // back to default .btn
       box-shadow: none;
     }
-
   } @else {
     &:focus,
     &.focus {
