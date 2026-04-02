@@ -159,6 +159,7 @@ exclude:
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
+  - node_modules/
   - docker-compose.yml
   - README.md
   - vendor/
