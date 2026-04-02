@@ -160,6 +160,7 @@ exclude:
   - CUSTOMIZE.md
   - Dockerfile
   - docker-compose.yml
+  - node_modules/
   - README.md
   - vendor/
 
