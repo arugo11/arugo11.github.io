@@ -218,6 +218,59 @@ h3 {
   min-width: 0;
 }
 
+.weekly-log-card {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.weekly-log-card__meta {
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.weekly-log-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.weekly-log-card__title a {
+  color: inherit;
+}
+
+.weekly-log-card__description {
+  margin-bottom: 0.85rem;
+}
+
+.weekly-log-card__link {
+  font-weight: 600;
+}
+
+.weekly-update-history {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.weekly-update-history__header h3 {
+  margin-bottom: 0.75rem;
+}
+
+.weekly-update-history__list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.weekly-update-history__list li + li {
+  margin-top: 0.4rem;
+}
+
+.weekly-update-history__empty {
+  margin-bottom: 0;
+  color: var(--global-text-color-light);
+}
+
 .portfolio-block {
   padding-top: 0.9rem;
   border-top: 1px solid var(--global-divider-color);
