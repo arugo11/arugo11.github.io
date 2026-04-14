@@ -16,7 +16,7 @@
   
   
     
-       | Argo's log
+      AGENTS.md | Argo's log
     
   
 </title>
@@ -36,9 +36,9 @@
   <meta property="og:type" content="website">
   <meta
     property="og:title"
-    content="Argo's log"
+    content="Argo's log | AGENTS.md"
   >
-  <meta property="og:url" content="https://arugo11.github.io/pages/arugo11/_pages/about_me/">
+  <meta property="og:url" content="https://arugo11.github.io/pages/arugo11/AGENTS/">
   <meta property="og:description" content="開発と日常の記録
 ">
   
@@ -48,7 +48,7 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Argo's log">
+  <meta name="twitter:title" content="AGENTS.md">
   <meta name="twitter:description" content="開発と日常の記録
 ">
   
@@ -107,11 +107,11 @@
             "@type": "Person",
             "name": "Argo "
         },
-        "url": "https://arugo11.github.io/pages/arugo11/_pages/about_me/",
+        "url": "https://arugo11.github.io/pages/arugo11/AGENTS/",
         "@type": "WebSite",
         "description": "開発と日常の記録
 ",
-        "headline": "Argo's log",
+        "headline": "AGENTS.md",
         
         "sameAs": ["https://github.com/arugo11", "https://twitter.com/arugo___", "https://discord.com/users/argo___"],
         
@@ -156,7 +156,7 @@
   <link rel="shortcut icon" href="/pages/arugo11/assets/img/icon.jpg">
 
 <link rel="stylesheet" href="/pages/arugo11/assets/css/main.css">
-<link rel="canonical" href="https://arugo11.github.io/pages/arugo11/_pages/about_me/">
+<link rel="canonical" href="https://arugo11.github.io/pages/arugo11/AGENTS/">
 
 <!-- Dark Mode -->
 <script src="/pages/arugo11/assets/js/theme.js"></script>
@@ -322,16 +322,204 @@
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title"></h1>
+    <h1 class="post-title">AGENTS.md</h1>
     <p class="post-description"></p>
   </header>
 
   <article>
-    <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <code class="language-python highlighter-rouge"><span class="n">prof_pic</span><span class="p">.</span><span class="n">jpg</span></code> and put it in the <code class="language-python highlighter-rouge"><span class="n">img</span><span class="o">/</span></code> folder.</p>
+    <h1 id="agentsmd">AGENTS.md</h1>
 
-<p>Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing <code class="language-python highlighter-rouge"><span class="n">profile</span></code> property of the YAML header of your <code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span><span class="n">about</span><span class="p">.</span><span class="n">md</span></code>. Edit <code class="language-python highlighter-rouge"><span class="n">_bibliography</span><span class="o">/</span><span class="n">papers</span><span class="p">.</span><span class="n">bib</span></code> and Jekyll will render your <a href="/al-folio/publications/">publications page</a> automatically.</p>
+<p>This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.</p>
 
-<p>Link to your social media connections, too. This theme is set up to use <a href="https://fontawesome.com/">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p>
+<h2 id="project-overview">Project Overview</h2>
+
+<p>This is a personal website/blog built with Jekyll using the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme, hosted on GitHub Pages. The site content is primarily in Japanese.</p>
+
+<p><strong>Site URL:</strong> https://arugo11.github.io</p>
+
+<h2 id="development-commands">Development Commands</h2>
+
+<h3 id="local-development">Local Development</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Install dependencies (first time only)</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Build the site</span>
+bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># Start local development server (serves at http://localhost:4000)</span>
+bundle <span class="nb">exec </span>jekyll serve
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note: There is no <code class="language-python highlighter-rouge"><span class="nb">bin</span><span class="o">/</span><span class="n">serve</span></code> script - use <code class="language-python highlighter-rouge"><span class="n">bundle</span> <span class="k">exec</span> <span class="n">jekyll</span> <span class="n">serve</span></code> directly.</p>
+
+<h3 id="building-and-deployment">Building and Deployment</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c"># Production build</span>
+bin/cibuild           <span class="c"># Equivalent to: bundle exec jekyll build</span>
+
+<span class="c"># Deploy to GitHub Pages (manual deployment)</span>
+bin/deploy            <span class="c"># Deploys from main branch to gh-pages branch</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Note:</strong> Automatic deployment is handled via GitHub Actions (<code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">deploy</span><span class="p">.</span><span class="n">yml</span></code>). Changes pushed to the main branch automatically trigger deployment.</p>
+
+<h3 id="code-formatting">Code Formatting</h3>
+
+<p>The project uses Prettier for code formatting. The GitHub workflow (<code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">prettier</span><span class="p">.</span><span class="n">yml</span></code>) runs automatically on commits.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c"># Format code manually</span>
+npm <span class="nb">install
+</span>npx prettier <span class="nb">.</span> <span class="nt">--write</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="content-structure">Content Structure</h2>
+
+<h3 id="blog-posts-_posts">Blog Posts (<code class="language-python highlighter-rouge"><span class="n">_posts</span><span class="o">/</span></code>)</h3>
+
+<ul>
+  <li>Blog posts use the naming format: <code class="language-python highlighter-rouge"><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="o">-</span><span class="n">title</span><span class="p">.</span><span class="n">md</span></code></li>
+  <li>Front matter required: <code class="language-python highlighter-rouge"><span class="n">title</span></code>, <code class="language-python highlighter-rouge"><span class="n">date</span></code>, <code class="language-python highlighter-rouge"><span class="n">layout</span><span class="p">:</span> <span class="n">post</span></code>, <code class="language-python highlighter-rouge"><span class="n">categories</span></code>, <code class="language-python highlighter-rouge"><span class="n">tags</span></code>, <code class="language-python highlighter-rouge"><span class="n">description</span></code>, <code class="language-python highlighter-rouge"><span class="n">image</span></code></li>
+  <li>Use <code class="language-python highlighter-rouge"><span class="n">_templates</span><span class="o">/</span><span class="n">post</span><span class="o">-</span><span class="n">template</span><span class="p">.</span><span class="n">md</span></code> as a starting point for new posts</li>
+  <li>Permalink format: <code class="language-python highlighter-rouge"><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="p">:</span><span class="n">year</span><span class="o">/</span><span class="p">:</span><span class="n">title</span><span class="o">/</span></code></li>
+</ul>
+
+<h3 id="news-_news">News (<code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code>)</h3>
+
+<ul>
+  <li>News/announcements are stored in <code class="language-python highlighter-rouge"><span class="n">_news</span><span class="o">/</span></code> directory</li>
+  <li>Uses the same markdown format as blog posts</li>
+  <li>Permalink format: <code class="language-python highlighter-rouge"><span class="o">/</span><span class="n">news</span><span class="o">/</span><span class="p">:</span><span class="n">path</span><span class="o">/</span></code></li>
+</ul>
+
+<h3 id="projects-_projects">Projects (<code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code>)</h3>
+
+<ul>
+  <li>Project showcase entries in <code class="language-python highlighter-rouge"><span class="n">_projects</span><span class="o">/</span></code> directory</li>
+  <li>Categories defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code> under <code class="language-python highlighter-rouge"><span class="n">project_categories</span></code></li>
+</ul>
+
+<h3 id="pages-_pages">Pages (<code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code>)</h3>
+
+<ul>
+  <li>Static pages like about, blog index, projects, etc.</li>
+  <li>Each page has a corresponding <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">md</span></code> file in <code class="language-python highlighter-rouge"><span class="n">_pages</span><span class="o">/</span></code></li>
+</ul>
+
+<h2 id="site-configuration">Site Configuration</h2>
+
+<p>Main configuration is in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>:</p>
+
+<ul>
+  <li><strong>Language:</strong> Japanese (<code class="language-python highlighter-rouge"><span class="n">lang</span><span class="p">:</span> <span class="n">ja</span></code>)</li>
+  <li><strong>Blog name:</strong> “Logbook”</li>
+  <li><strong>Navigation:</strong> Defined in <code class="language-python highlighter-rouge"><span class="n">navbar_pages</span></code> section</li>
+  <li><strong>Collections:</strong> <code class="language-python highlighter-rouge"><span class="n">news</span></code> and <code class="language-python highlighter-rouge"><span class="n">projects</span></code> are custom collections</li>
+  <li><strong>Plugins:</strong> jekyll-archives, jekyll-feed, jekyll-scholar, jekyll-toc, jemoji, etc.</li>
+</ul>
+
+<h3 id="key-configuration-sections">Key Configuration Sections</h3>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">blog_name</span></code>: Blog section title</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">latest_posts</span><span class="p">.</span><span class="n">limit</span></code>: Number of posts shown on homepage (default: 5)</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">display_tags</span></code>: Tags shown in the blog sidebar</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">giscus</span></code>: GitHub Discussions-based commenting system (enabled for Japanese)</li>
+</ul>
+
+<h2 id="theme-customization">Theme Customization</h2>
+
+<ul>
+  <li><strong>Color theme:</strong> Custom cream color <code class="language-python highlighter-rouge"><span class="c1">#F6ECD4</span></code> defined in <code class="language-python highlighter-rouge"><span class="n">colors</span><span class="p">.</span><span class="n">cream</span></code></li>
+  <li><strong>Styles:</strong> Located in <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span></code> directory</li>
+  <li><strong>Layouts:</strong> Liquid templates in <code class="language-python highlighter-rouge"><span class="n">_layouts</span><span class="o">/</span></code> (default, post, page, about, etc.)</li>
+  <li><strong>Includes:</strong> Reusable components in <code class="language-python highlighter-rouge"><span class="n">_includes</span><span class="o">/</span></code> (header, footer, social, etc.)</li>
+  <li><strong>Assets:</strong> Static assets in <code class="language-python highlighter-rouge"><span class="n">assets</span><span class="o">/</span></code> (images, CSS, JS, fonts)</li>
+</ul>
+
+<h3 id="layout-types">Layout Types</h3>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">default</span><span class="p">.</span><span class="n">liquid</span></code>: Base layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">post</span><span class="p">.</span><span class="n">liquid</span></code>: Blog post layout with TOC support</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">page</span><span class="p">.</span><span class="n">liquid</span></code>: Static page layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">about</span><span class="p">.</span><span class="n">liquid</span></code>: About/profile page layout</li>
+  <li><code class="language-python highlighter-rouge"><span class="n">distill</span><span class="p">.</span><span class="n">liquid</span></code>: Distill publication format</li>
+</ul>
+
+<h2 id="special-features">Special Features</h2>
+
+<ul>
+  <li><strong>TOC (Table of Contents):</strong> Enabled via <code class="language-python highlighter-rouge"><span class="n">jekyll</span><span class="o">-</span><span class="n">toc</span></code> plugin</li>
+  <li><strong>MathJax:</strong> Enabled (<code class="language-python highlighter-rouge"><span class="n">enable_math</span><span class="p">:</span> <span class="n">true</span></code>)</li>
+  <li><strong>Dark Mode:</strong> Enabled (<code class="language-python highlighter-rouge"><span class="n">enable_darkmode</span><span class="p">:</span> <span class="n">true</span></code>)</li>
+  <li><strong>Comments:</strong> Giscus (GitHub Discussions) integration</li>
+  <li><strong>Search:</strong> Built-in search functionality enabled</li>
+  <li><strong>Image lazy loading:</strong> Enabled</li>
+</ul>
+
+<h2 id="deployment-workflow">Deployment Workflow</h2>
+
+<ol>
+  <li>Push changes to <code class="language-python highlighter-rouge"><span class="n">main</span></code> branch</li>
+  <li>GitHub Actions workflow <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">github</span><span class="o">/</span><span class="n">workflows</span><span class="o">/</span><span class="n">deploy</span><span class="p">.</span><span class="n">yml</span></code> triggers automatically</li>
+  <li>Site is built and deployed to GitHub Pages</li>
+  <li>Deployed from <code class="language-python highlighter-rouge"><span class="n">gh</span><span class="o">-</span><span class="n">pages</span></code> branch</li>
+</ol>
+
+<h3 id="cloudflare-pages-notes">Cloudflare Pages Notes</h3>
+
+<ul>
+  <li>This repository may also be built by Cloudflare Pages, which runs <code class="language-python highlighter-rouge"><span class="n">npm</span> <span class="n">clean</span><span class="o">-</span><span class="n">install</span></code> before <code class="language-python highlighter-rouge"><span class="n">bundle</span> <span class="n">install</span></code>.</li>
+  <li>Keep <code class="language-python highlighter-rouge"><span class="n">node_modules</span><span class="o">/</span></code> in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>’s <code class="language-python highlighter-rouge"><span class="n">exclude</span></code> list. If it is not excluded, Jekyll can try to render package README files as site content and fail on Liquid-like syntax inside dependencies.</li>
+  <li>Cloudflare Pages has been sensitive to SCSS encoding issues from the upstream <code class="language-python highlighter-rouge"><span class="n">jekyll</span><span class="o">-</span><span class="n">theme</span><span class="o">-</span><span class="n">primer</span></code> gem. The repository now vendors Primer SCSS under <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span><span class="n">primer</span><span class="o">-*</span></code>, plus <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span><span class="n">jekyll</span><span class="o">-</span><span class="n">theme</span><span class="o">-</span><span class="n">primer</span><span class="p">.</span><span class="n">scss</span></code> and <code class="language-python highlighter-rouge"><span class="n">assets</span><span class="o">/</span><span class="n">css</span><span class="o">/</span><span class="n">style</span><span class="p">.</span><span class="n">scss</span></code>, specifically to avoid that build failure.</li>
+  <li>When adjusting theme styles, prefer editing the repo-owned SCSS files rather than assuming the gem-provided Primer assets will build correctly in Cloudflare.</li>
+  <li>If a Cloudflare deployment fails, inspect the build log before changing app code. Recent failures in this repo have been caused by build-environment differences rather than by page content changes.</li>
+</ul>
+
+<h2 id="files-to-exclude">Files to Exclude</h2>
+
+<p>The following are excluded from the build (defined in <code class="language-python highlighter-rouge"><span class="n">_config</span><span class="p">.</span><span class="n">yml</span></code>):</p>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">_site</span><span class="o">/</span></code> (build output directory)</li>
+  <li><code class="language-python highlighter-rouge"><span class="nb">bin</span><span class="o">/</span></code>, <code class="language-python highlighter-rouge"><span class="n">vendor</span><span class="o">/</span></code>, <code class="language-python highlighter-rouge"><span class="n">node_modules</span><span class="o">/</span></code> (development dependencies)</li>
+  <li>Documentation files (README.md, CONTRIBUTING.md, CUSTOMIZE.md, etc.)</li>
+  <li>Docker files</li>
+</ul>
+
+<h2 id="custom-data-files">Custom Data Files</h2>
+
+<ul>
+  <li><code class="language-python highlighter-rouge"><span class="n">_data</span><span class="o">/</span><span class="n">schedule</span><span class="p">.</span><span class="n">yml</span></code>: Stores schedule/calendar events data. Events are structured as YAML objects consumed by the schedule page.</li>
+</ul>
+
+<h2 id="custom-styles">Custom Styles</h2>
+
+<p>The <code class="language-python highlighter-rouge"><span class="n">_sass</span><span class="o">/</span><span class="n">_custom</span><span class="p">.</span><span class="n">scss</span></code> file defines site-specific styles:</p>
+
+<ul>
+  <li><strong>Theme colors</strong>: Cream color <code class="language-python highlighter-rouge"><span class="c1">#F6ECD4</span></code> for light mode, dark mode colors</li>
+  <li><strong>Custom components</strong>: <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">post</span><span class="o">-</span><span class="n">card</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">weekly</span><span class="o">-</span><span class="n">log</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">trpg</span><span class="o">-</span><span class="n">session</span></code>, <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">ml</span><span class="o">-</span><span class="n">article</span></code></li>
+  <li><strong>Calendar styles</strong>: FullCalendar customization via <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">fc</span></code> classes</li>
+  <li><strong>Project cards</strong>: 16:9 aspect ratio for <code class="language-python highlighter-rouge"><span class="p">.</span><span class="n">card</span><span class="o">-</span><span class="n">img</span><span class="o">-</span><span class="n">top</span></code></li>
+</ul>
 
   </article>
 
