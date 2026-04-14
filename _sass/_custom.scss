@@ -218,6 +218,14 @@ h3 {
   min-width: 0;
 }
 
+.post-content #markdown-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+}
+
 .weekly-log-card {
   padding: 1rem 1.1rem;
   border: 1px solid var(--global-divider-color);
