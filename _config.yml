@@ -32,7 +32,7 @@ colors:
   cream: "#F6ECD4" # カスタムテーマカラー
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 max_width: 930px
 
 # -----------------------------------------------------------------------------
@@ -50,7 +50,7 @@ og_image: /assets/img/icon.jpg
 # -----------------------------------------------------------------------------
 
 twitter_username: # Deprecated; use x_username
-x_username: arugo___
+x_username: argo_dev_
 discord_id: argo___
 qiita_username: # あなたのQiita username
 
@@ -94,7 +94,7 @@ announcements:
 permalink: /blog/:year/:title/
 
 # タグ設定
-display_tags: ["ML", "TRPG", "Weekly", "Tech", "Daily"]
+display_tags: ["Weekly", "Tech", "Daily", "執筆"]
 tag_collection_name: blog_tags
 tag_page_layout: tag
 tag_page_dir: tag
@@ -155,10 +155,16 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - AGENTS.md
   - bin/
+  - CLAUDE.md
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
+  - FAQ.md
+  - INSTALL.md
+  - _pages/about_me.md
+  - _pages/profiles.md
   - node_modules/
   - docker-compose.yml
   - README.md
@@ -176,6 +182,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jemoji
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-category
+    tag: archive-tag
+  permalinks:
+    category: /blog/category/:name/
+    tag: /blog/tag/:name/
 
 # 検索機能
 search_enabled: true

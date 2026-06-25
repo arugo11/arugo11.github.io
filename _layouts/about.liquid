@@ -4,6 +4,8 @@ layout: default
 {% assign featured_projects = site.projects | where: 'featured', true | sort: 'importance' | reverse %}
 {% assign latest_posts_count = site.posts | size %}
 {% assign latest_news_count = site.news | size %}
+{% assign weekly_posts = site.posts | where_exp: 'post', "post.categories contains 'Weekly'" %}
+{% assign latest_weekly_post = weekly_posts | first %}
 
 <div class="portfolio-shell">
   <section class="portfolio-masthead">
@@ -65,14 +67,23 @@ layout: default
   <section class="portfolio-split">
     <section class="portfolio-block portfolio-block--tight">
       <div class="portfolio-block__header">
-        <p class="portfolio-kicker">発信</p>
-        <h2>発信</h2>
+        <p class="portfolio-kicker">Weekly Log</p>
+        <h2>週記</h2>
       </div>
-      {% if site.latest_posts.enabled and latest_posts_count > 0 %}
-        {% include latest_posts.liquid %}
+      {% if latest_weekly_post %}
+        <article class="weekly-log-card">
+          <p class="weekly-log-card__meta">{{ latest_weekly_post.date | date: '%Y年%-m月%-d日' }}</p>
+          <h3 class="weekly-log-card__title">
+            <a href="{{ latest_weekly_post.url | relative_url }}">{{ latest_weekly_post.title }}</a>
+          </h3>
+          {% if latest_weekly_post.description %}
+            <p class="weekly-log-card__description">{{ latest_weekly_post.description }}</p>
+          {% endif %}
+          <a class="weekly-log-card__link" href="{{ latest_weekly_post.url | relative_url }}">週記を読む</a>
+        </article>
       {% else %}
         <div class="portfolio-quiet">
-          <p>ブログは準備中です。公開できる研究メモや開発ログから順に追加していきます。</p>
+          <p>まだ週記はありません。`_posts` に `categories: [Weekly]` の記事を追加するとここに表示されます。</p>
         </div>
       {% endif %}
     </section>
