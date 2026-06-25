@@ -167,6 +167,7 @@ exclude:
   - _pages/profiles.md
   - node_modules/
   - docker-compose.yml
+  - node_modules/
   - README.md
   - vendor/
 

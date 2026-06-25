@@ -295,7 +295,7 @@ h3 {
 
 .portfolio-project-row {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 72px;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
   gap: 1rem;
   align-items: start;
   padding: 0.8rem 0;
@@ -326,6 +326,10 @@ h3 {
 .portfolio-project-row__body p,
 .portfolio-project-row__arrow span {
   color: var(--global-text-color-light);
+}
+
+.portfolio-project-row__arrow span {
+  white-space: nowrap;
 }
 
 .portfolio-project-row__arrow {
