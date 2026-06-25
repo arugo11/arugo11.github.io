@@ -13,4 +13,6 @@ group :jekyll_plugins do
   gem 'jekyll-toc'
   gem 'jekyll-scholar'
 end
+gem "faraday-net_http", "~> 3.0"
+gem "faraday", "2.8.1"
 gem "faraday-retry", "~> 2.3"

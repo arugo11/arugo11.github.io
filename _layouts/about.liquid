@@ -6,7 +6,6 @@ layout: default
 {% assign latest_news_count = site.news | size %}
 {% assign weekly_posts = site.posts | where_exp: 'post', "post.categories contains 'Weekly'" %}
 {% assign latest_weekly_post = weekly_posts | first %}
-{% assign non_weekly_posts_count = latest_posts_count | minus: weekly_posts.size %}
 
 <div class="portfolio-shell">
   <section class="portfolio-masthead">
@@ -87,31 +86,6 @@ layout: default
           <p>まだ週記はありません。`_posts` に `categories: [Weekly]` の記事を追加するとここに表示されます。</p>
         </div>
       {% endif %}
-
-      <div class="weekly-update-history">
-        <div class="weekly-update-history__header">
-          <p class="portfolio-kicker">Updates</p>
-          <h3>更新履歴</h3>
-        </div>
-        {% if non_weekly_posts_count > 0 %}
-          <ul class="weekly-update-history__list">
-            {% assign update_count = 0 %}
-            {% for post in site.posts %}
-              {% unless post.categories contains 'Weekly' %}
-                <li>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </li>
-                {% assign update_count = update_count | plus: 1 %}
-              {% endunless %}
-              {% if update_count >= 3 %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="weekly-update-history__empty">週記以外の更新はまだありません。</p>
-        {% endif %}
-      </div>
     </section>
 
     {% if page.social %}

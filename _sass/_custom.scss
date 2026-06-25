@@ -103,6 +103,7 @@ h3 {
     opacity: 0.5;
   }
 }
+
 // Calendar customization
 .fc {
   --fc-border-color: #e8dcc4;
@@ -138,6 +139,14 @@ h3 {
 .card-img-top {
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.post-content #markdown-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
 }
 
 // Portfolio redesign
@@ -218,14 +227,6 @@ h3 {
   min-width: 0;
 }
 
-.post-content #markdown-content img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 1rem auto;
-}
-
 .weekly-log-card {
   padding: 1rem 1.1rem;
   border: 1px solid var(--global-divider-color);
@@ -253,30 +254,6 @@ h3 {
 
 .weekly-log-card__link {
   font-weight: 600;
-}
-
-.weekly-update-history {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--global-divider-color);
-}
-
-.weekly-update-history__header h3 {
-  margin-bottom: 0.75rem;
-}
-
-.weekly-update-history__list {
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
-.weekly-update-history__list li + li {
-  margin-top: 0.4rem;
-}
-
-.weekly-update-history__empty {
-  margin-bottom: 0;
-  color: var(--global-text-color-light);
 }
 
 .portfolio-block {
@@ -336,9 +313,14 @@ h3 {
   text-decoration: none;
 }
 
+.portfolio-project-row__body {
+  min-width: 0;
+}
+
 .portfolio-project-row__body h3 {
   margin-bottom: 0.35rem;
   font-size: 1.15rem;
+  overflow-wrap: anywhere;
 }
 
 .portfolio-project-row__body p,
@@ -384,6 +366,15 @@ h3 {
 
 .portfolio-timeline__body p {
   margin-bottom: 0;
+}
+
+.header-bar h1,
+.post-title,
+.portfolio-masthead__lead,
+.portfolio-masthead__summary,
+.portfolio-block__header,
+.weekly-log-card__title {
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 991.98px) {
