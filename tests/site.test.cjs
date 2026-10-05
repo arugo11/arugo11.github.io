@@ -14,6 +14,8 @@ const site = path.join(root, "_site");
 const palettes = ["latte", "mocha", "espresso"];
 const paletteBackgrounds = { latte: "rgb(255, 250, 244)", mocha: "rgb(241, 227, 213)", espresso: "rgb(36, 27, 24)" };
 let browser, server, base;
+let legacyCacheCase = false;
+const cacheCaseRequests = [];
 const types = {
   ".html": "text/html",
   ".css": "text/css",
@@ -30,10 +32,31 @@ before(async () => {
   assert.ok(existsSync(path.join(site, "index.html")), "Build Jekyll before running the browser tests");
   server = http.createServer(async (req, res) => {
     try {
-      let file = path.resolve(site, "." + decodeURIComponent(new URL(req.url, "http://localhost").pathname));
+      const url = new URL(req.url, "http://localhost");
+      let file = path.resolve(site, "." + decodeURIComponent(url.pathname));
       assert.ok(file.startsWith(site + path.sep) || file === site);
       if ((await fs.stat(file)).isDirectory()) file = path.join(file, "index.html");
       res.setHeader("Content-Type", types[path.extname(file)] || "application/octet-stream");
+      if (legacyCacheCase) {
+        // Keep a real HTTP cache enabled (Playwright routing disables it).
+        res.setHeader(
+          "Content-Security-Policy",
+          "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+        );
+        if (["/assets/css/main.css", "/assets/js/theme.js"].includes(url.pathname)) {
+          cacheCaseRequests.push(req.url);
+          res.setHeader("Cache-Control", "public, max-age=14400");
+          if (!url.search) {
+            return res.end(
+              url.pathname.endsWith(".css") ? "body { background: white; } .portfolio-grid { display: block; }" : "window.legacyThemeLoaded = true;"
+            );
+          }
+        }
+        if (url.searchParams.has("legacy-assets")) {
+          const html = (await fs.readFile(file, "utf8")).replace(/(\/assets\/(?:css\/main\.css|js\/theme\.js))\?[^"']*/g, "$1");
+          return res.end(html);
+        }
+      }
       res.end(await fs.readFile(file));
     } catch {
       res.writeHead(404).end();
@@ -88,6 +111,52 @@ test("Home shows three real project images and canonical URLs use argo11.dev", a
   assert.equal(await page.locator(".project-card a a").count(), 0);
   assert.deepEqual(errors, []);
   await context.close();
+});
+
+test("Every themed HTML route references matching versioned CSS and theme JS", async () => {
+  // Standalone embed assets and saved Lighthouse reports do not use the site head.
+  for (const file of baseline.html_paths.filter((file) => !file.startsWith("assets/") && !file.startsWith("lighthouse_results/"))) {
+    const html = await fs.readFile(path.join(site, file), "utf8");
+    const cssVersion = html.match(/\/assets\/css\/main\.css\?v=(\d{14})"/);
+    const jsVersion = html.match(/\/assets\/js\/theme\.js\?v=(\d{14})"/);
+    assert.ok(cssVersion, `${file}: versioned CSS`);
+    assert.ok(jsVersion, `${file}: versioned theme JS`);
+    assert.equal(cssVersion[1], jsVersion[1], file);
+  }
+});
+
+test("Revisits and ordinary reloads work with four-hour legacy CSS and JS in the browser cache", async () => {
+  legacyCacheCase = true;
+  cacheCaseRequests.length = 0;
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  try {
+    const page = await context.newPage();
+    await page.goto(base + "/?legacy-assets=1", { waitUntil: "load" });
+    assert.equal(await page.evaluate(() => window.legacyThemeLoaded), true);
+    assert.equal(await page.locator(".portfolio-grid").evaluate((node) => getComputedStyle(node).display), "block");
+    // Prove that a second navigation uses the old HTTP cache rather than fetching it again.
+    const legacyRequests = cacheCaseRequests.length;
+    await page.goto(base + "/?legacy-assets=2", { waitUntil: "load" });
+    assert.equal(cacheCaseRequests.length, legacyRequests);
+    assert.equal(await page.evaluate(() => window.legacyThemeLoaded), true);
+    await page.goto(base, { waitUntil: "load" });
+    assert.equal(await page.evaluate(() => window.legacyThemeLoaded), undefined);
+    assert.equal(await page.locator(".site-nav").evaluate((node) => getComputedStyle(node).display), "flex");
+    assert.equal(await page.locator(".portfolio-grid").evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(" ").length), 3);
+    assert.equal(await page.locator("body").evaluate((node) => getComputedStyle(node).backgroundColor), paletteBackgrounds.latte);
+    await page.locator('.palette-switch label:has(input[value="espresso"])').click();
+    await page.reload({ waitUntil: "load" });
+    assert.equal(await page.locator("body").evaluate((node) => getComputedStyle(node).backgroundColor), paletteBackgrounds.espresso);
+    await page.goto(base + "/projects/", { waitUntil: "load" });
+    assert.equal(await page.locator('input[value="espresso"]').isChecked(), true);
+    await page.locator('.palette-switch label:has(input[value="mocha"])').click();
+    assert.equal(await page.locator("body").evaluate((node) => getComputedStyle(node).backgroundColor), paletteBackgrounds.mocha);
+    assert.ok(cacheCaseRequests.some((url) => /^\/assets\/css\/main.css\?v=\d{14}$/.test(url)));
+    assert.ok(cacheCaseRequests.some((url) => /^\/assets\/js\/theme.js\?v=\d{14}$/.test(url)));
+  } finally {
+    await context.close();
+    legacyCacheCase = false;
+  }
 });
 
 test("Palette radios work with arrow keys and remember the selection across routes, reloads and tabs", async () => {
