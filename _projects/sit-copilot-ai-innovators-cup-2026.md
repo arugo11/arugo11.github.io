@@ -4,6 +4,13 @@ description: AI Innovators Cup @ Shibaura にて、講義中の理解支援と�
 date: 2026-03-13
 importance: 5
 featured: true
+home_order: 2
+card_title: SIT Copilot
+card_kicker: AI Innovators Cup @ Shibaura
+award: 金賞
+card_img: /assets/img/projects/sit-copilot.png
+card_alt: SIT Copilot の実際の講義字幕画面。多言語切替、要点と用語の補助を表示
+card_image_position: center top
 layout: page
 permalink: /projects/sit-copilot-ai-innovators-cup-2026/
 github: https://github.com/arugo11/sit-copilot

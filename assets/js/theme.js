@@ -1,31 +1,50 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
-let toggleThemeSetting = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
-    setThemeSetting("dark");
-  } else {
-    setThemeSetting("system");
+const paletteNames = ["latte", "mocha", "espresso"];
+const paletteStorageKey = "argo-palette";
+let currentPalette = "latte";
+
+const readPalette = () => {
+  try {
+    const stored = localStorage.getItem(paletteStorageKey);
+    if (paletteNames.includes(stored)) return stored;
+    if (stored === null && localStorage.getItem("theme") === "dark") return "espresso";
+  } catch {
+    // Storage may be unavailable; keep the selected palette for this page.
   }
+  return "latte";
 };
 
-// Change the theme setting and apply the theme.
-let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+const syncPaletteControls = () => {
+  document.querySelectorAll('input[name="palette"]').forEach((input) => {
+    input.checked = input.value === currentPalette;
+  });
+};
 
-  document.documentElement.setAttribute("data-theme-setting", themeSetting);
-
+const setPalette = (palette, persist = true) => {
+  currentPalette = paletteNames.includes(palette) ? palette : "latte";
+  if (persist) {
+    try {
+      localStorage.setItem(paletteStorageKey, currentPalette);
+    } catch {
+      // The control still works without persistent storage.
+    }
+  }
+  document.documentElement.dataset.palette = currentPalette;
+  document.documentElement.dataset.themeSetting = currentPalette === "espresso" ? "dark" : "light";
+  syncPaletteControls();
   applyTheme();
 };
+
+// Keep existing chart, code and embedded-comment integrations compatible.
+const determineThemeSetting = () => (currentPalette === "espresso" ? "dark" : "light");
+const determineComputedTheme = determineThemeSetting;
+const setThemeSetting = (setting) => setPalette(setting === "dark" ? "espresso" : "latte");
 
 // Apply the computed dark or light theme to the website.
 let applyTheme = () => {
   let theme = determineComputedTheme();
 
-  transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
   setSearchTheme(theme);
@@ -84,13 +103,10 @@ let applyTheme = () => {
 };
 
 let setHighlight = (theme) => {
-  if (theme == "dark") {
-    document.getElementById("highlight_theme_light").media = "none";
-    document.getElementById("highlight_theme_dark").media = "";
-  } else {
-    document.getElementById("highlight_theme_dark").media = "none";
-    document.getElementById("highlight_theme_light").media = "";
-  }
+  const light = document.getElementById("highlight_theme_light");
+  const dark = document.getElementById("highlight_theme_dark");
+  if (light) light.media = theme === "dark" ? "none" : "";
+  if (dark) dark.media = theme === "dark" ? "" : "none";
 };
 
 let setGiscusTheme = (theme) => {
@@ -198,55 +214,17 @@ let setSearchTheme = (theme) => {
   }
 };
 
-let transTheme = () => {
-  document.documentElement.classList.add("transition");
-  window.setTimeout(() => {
-    document.documentElement.classList.remove("transition");
-  }, 500);
-};
-
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
-let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
-  }
-  return themeSetting;
-};
-
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
-let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    const userPref = window.matchMedia;
-    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  } else {
-    return themeSetting;
-  }
-};
-
 let initTheme = () => {
-  let themeSetting = determineThemeSetting();
-
-  setThemeSetting(themeSetting);
-
-  // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("light-toggle");
-
-    mode_toggle.addEventListener("click", function () {
-      toggleThemeSetting();
+  document.documentElement.classList.add("js");
+  setPalette(readPalette(), false);
+  document.addEventListener("DOMContentLoaded", () => {
+    syncPaletteControls();
+    applyTheme();
+    document.querySelectorAll('input[name="palette"]').forEach((input) => {
+      input.addEventListener("change", () => setPalette(input.value));
     });
   });
-
-  // Add event listener to the system theme preference change.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-    applyTheme();
+  window.addEventListener("storage", (event) => {
+    if (event.key === paletteStorageKey || event.key === null) setPalette(readPalette(), false);
   });
 };

@@ -1,130 +1,97 @@
 ---
 layout: default
 ---
-{% assign featured_projects = site.projects | where: 'featured', true | sort: 'importance' | reverse %}
-{% assign latest_posts_count = site.posts | size %}
-{% assign latest_news_count = site.news | size %}
-{% assign weekly_posts = site.posts | where_exp: 'post', "post.categories contains 'Weekly'" %}
-{% assign latest_weekly_post = weekly_posts | first %}
-{% assign non_weekly_posts_count = latest_posts_count | minus: weekly_posts.size %}
+{% assign home_projects = site.projects | where_exp: 'project', 'project.home_order' | sort: 'home_order' %}
+{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
 
 <div class="portfolio-shell">
-  <section class="portfolio-masthead">
+  <section class="portfolio-masthead" aria-labelledby="intro-title">
     <div class="portfolio-masthead__main">
+      <h1 id="intro-title" class="portfolio-masthead__title">
+        {{ page.hero_title -}}
+        <span aria-hidden="true">.</span>
+      </h1>
       <p class="portfolio-kicker">{{ page.hero_label }}</p>
-      <h1 class="portfolio-masthead__title">{{ page.hero_title }}</h1>
-      <p class="portfolio-masthead__lead">{{ page.subtitle }}</p>
       <p class="portfolio-masthead__summary">{{ page.hero_summary }}</p>
-
+      <p class="portfolio-masthead__lead">{{ page.subtitle }}</p>
       <div class="portfolio-masthead__actions">
-        <a class="btn btn-sm z-depth-0" href="{{ '/projects/' | relative_url }}">プロジェクト一覧</a>
-        <a class="btn btn-sm z-depth-0" href="{{ '/cv/' | relative_url }}">CV</a>
-        <a class="btn btn-sm z-depth-0" href="mailto:{{ site.email }}">メールする</a>
+        <a class="primary-action" href="{{ '/projects/' | relative_url }}">プロジェクト一覧 <span aria-hidden="true">→</span></a>
+        <a class="secondary-action" href="{{ '/cv/' | relative_url }}">CV</a>
+        <a class="text-action" href="mailto:{{ site.email }}">メールする</a>
       </div>
     </div>
+    <section class="profile-panel" aria-labelledby="profile-heading">
+      <div class="profile-panel__intro">
+        <img src="{{ '/assets/img/icon.jpg' | relative_url }}" width="200" height="200" alt="Argo のプロフィールアイコン" fetchpriority="high">
+        <h2 id="profile-heading">Hello, I’m Argo.</h2>
+      </div>
+      <div class="profile-panel__body">{{ content }}</div>
+      <ul class="profile-interests" aria-label="関心分野">
+        <li>LLM</li>
+        <li>Robotics</li>
+        <li>Math</li>
+      </ul>
+    </section>
   </section>
 
-  <section class="portfolio-editorial">
-    <div class="portfolio-editorial__main">
-      {{ content }}
-    </div>
-  </section>
-
-  <section class="portfolio-block">
-    <div class="portfolio-block__header">
-      <p class="portfolio-kicker">主要実績</p>
-      <h2>主要実績</h2>
+  <section class="portfolio-block" aria-labelledby="works-heading">
+    <div class="section-heading">
+      <div>
+        <p class="portfolio-kicker">Selected works</p>
+        <h2 id="works-heading">主要実績</h2>
+      </div>
       <p>受賞や発表を含めて、今の関心や役割が伝わるものを先に並べています。</p>
     </div>
+    <div class="portfolio-grid">
+      {% for project in home_projects -%}
+        {%- include project-card.liquid project=project -%}
+      {%- endfor %}
+    </div>
+    <a class="section-link" href="{{ '/projects/' | relative_url }}">すべてのプロジェクトを見る <span aria-hidden="true">→</span></a>
+  </section>
 
-    <div class="portfolio-project-list">
-      {% for project in featured_projects limit: 4 %}
-        <a class="portfolio-project-row" href="{{ project.url | relative_url }}">
-          <div class="portfolio-project-row__meta">
-            <span>{{ project.date | date: '%Y' }}</span>
+  <section class="portfolio-notes" aria-labelledby="notes-heading">
+    <div class="section-heading">
+      <div>
+        <p class="portfolio-kicker">Zines & notes</p>
+        <h2 id="notes-heading">更新履歴</h2>
+      </div>
+    </div>
+    <div class="notes-grid">
+      {% for post in visible_posts limit: 3 %}
+        <a class="note-card" href="{{ post.url | relative_url }}">
+          <span class="note-card__icon" aria-hidden="true">↗</span>
+          <div>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+            <h3>{{ post.title }}</h3>
           </div>
-          <div class="portfolio-project-row__body">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description | strip_html }}</p>
-          </div>
-          <div class="portfolio-project-row__arrow">
-            <span>詳細を見る</span>
-          </div>
+          <span aria-hidden="true">→</span>
         </a>
       {% endfor %}
     </div>
   </section>
 
-  {% if page.news and site.announcements.enabled and latest_news_count > 0 %}
-    <section class="portfolio-block">
-      <div class="portfolio-block__header">
-        <p class="portfolio-kicker">近況</p>
-        <h2>最近のトピック</h2>
+  {% if page.news and site.announcements.enabled %}
+    <section class="portfolio-block" aria-labelledby="news-heading">
+      <div class="section-heading">
+        <div>
+          <p class="portfolio-kicker">近況</p>
+          <h2 id="news-heading">最近のトピック</h2>
+        </div>
       </div>
       {% include news.liquid limit=true %}
     </section>
   {% endif %}
 
-  <section class="portfolio-split">
-    <section class="portfolio-block portfolio-block--tight">
-      <div class="portfolio-block__header">
-        <p class="portfolio-kicker">Weekly Log</p>
-        <h2>週記</h2>
+  {% if page.social %}
+    <section class="portfolio-contact" aria-labelledby="contact-heading">
+      <div>
+        <h2 id="contact-heading">連絡先</h2>
+        <p>{{ site.contact_note }}</p>
       </div>
-      {% if latest_weekly_post %}
-        <article class="weekly-log-card">
-          <p class="weekly-log-card__meta">{{ latest_weekly_post.date | date: '%Y年%-m月%-d日' }}</p>
-          <h3 class="weekly-log-card__title">
-            <a href="{{ latest_weekly_post.url | relative_url }}">{{ latest_weekly_post.title }}</a>
-          </h3>
-          {% if latest_weekly_post.description %}
-            <p class="weekly-log-card__description">{{ latest_weekly_post.description }}</p>
-          {% endif %}
-          <a class="weekly-log-card__link" href="{{ latest_weekly_post.url | relative_url }}">週記を読む</a>
-        </article>
-      {% else %}
-        <div class="portfolio-quiet">
-          <p>まだ週記はありません。`_posts` に `categories: [Weekly]` の記事を追加するとここに表示されます。</p>
-        </div>
-      {% endif %}
-
-      <div class="weekly-update-history">
-        <div class="weekly-update-history__header">
-          <p class="portfolio-kicker">Updates</p>
-          <h3>更新履歴</h3>
-        </div>
-        {% if non_weekly_posts_count > 0 %}
-          <ul class="weekly-update-history__list">
-            {% assign update_count = 0 %}
-            {% for post in site.posts %}
-              {% unless post.categories contains 'Weekly' %}
-                <li>
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </li>
-                {% assign update_count = update_count | plus: 1 %}
-              {% endunless %}
-              {% if update_count >= 3 %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="weekly-update-history__empty">週記以外の更新はまだありません。</p>
-        {% endif %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
       </div>
     </section>
-
-    {% if page.social %}
-      <section class="portfolio-block portfolio-block--tight">
-        <div class="portfolio-block__header">
-          <p class="portfolio-kicker">連絡先</p>
-          <h2>連絡先</h2>
-          <p>{{ site.contact_note }}</p>
-        </div>
-        <div class="social">
-          <div class="contact-icons">{% include social.liquid %}</div>
-        </div>
-      </section>
-    {% endif %}
-  </section>
+  {% endif %}
 </div>

@@ -4,6 +4,12 @@ description: FT-LLM 2026 の数学タスク オープン部門に参加。チー
 date: 2026-03-13
 importance: 5
 featured: true
+home_order: 3
+card_title: FT-LLM 2026
+card_kicker: Math reasoning
+award: 総合3位
+card_alt: NLP2026 の会場で撮影した数学タスクの受賞結果。チーム ビクトリーは総合3位
+card_image_position: center 25%
 layout: page
 permalink: /projects/nlp2026-ftllm-math-2026/
 img: /assets/img/nlp2026-ftllm-award.jpg

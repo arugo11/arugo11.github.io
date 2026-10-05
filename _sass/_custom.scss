@@ -1,27 +1,5 @@
 // _sass/_custom.scss
 
-// Custom color variables
-:root {
-  --theme-cream: #f6ecd4;
-  --global-bg-color: #{var(--theme-cream)};
-}
-
-// Light mode styles
-.light {
-  --global-bg-color: var(--theme-cream);
-  --global-text-color: #2c3e50;
-  --global-theme-color: #2c3e50;
-  --global-hover-color: #425b75;
-}
-
-// Dark mode styles
-.dark {
-  --global-bg-color: #202124;
-  --global-text-color: #ffffff;
-  --global-theme-color: #8ab4f8;
-  --global-hover-color: #aec7f4;
-}
-
 // Custom styles
 body {
   background-color: var(--global-bg-color);

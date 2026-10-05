@@ -1,96 +1,65 @@
-<header>
-  <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
-    <div class="container">
-      <a class="navbar-brand title font-weight-lighter" href="{{ '/' | relative_url }}">
-        {% if site.title == 'blank' %}
-          {% if site.first_name %}
-            <span class="font-weight-bold">
-              {{- site.first_name -}}
-            </span>
-          {% endif %}
-          {% if site.middle_name %}
-            {{- site.middle_name -}}
-          {% endif %}
-          {% if site.last_name %}
-            {{- site.last_name -}}
-          {% endif %}
-        {% else %}
-          {{- site.title -}}
-        {% endif %}
-      </a>
-      <!-- Navbar Toggle -->
-      <button
-        class="navbar-toggler collapsed ml-auto"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
-      </button>
-
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              Home
-              {% if page.permalink == '/' %}
-                <span class="sr-only">(current)</span>
-              {% endif %}
-            </a>
-          </li>
-
-          <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
-          {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null and p.permalink != '/' %}
-              {% assign parent_link = p.permalink | remove: 'index.html' %}
-              <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
-                <a class="nav-link" href="{{ url | relative_url }}">
-                  {{- p.title }}
-                  {% if page.url contains p.url %}
-                    <span class="sr-only">(current)</span>
-                  {% endif %}
-                </a>
-              </li>
+<header class="site-header">
+  <nav class="container site-nav" aria-label="メインナビゲーション">
+    <a class="site-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="メニューを開く">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+      <span>メニュー</span>
+    </button>
+    <div class="site-navigation" id="site-navigation" data-expanded="false">
+      <ul class="site-nav-links">
+        <li>
+          <a
+            href="{{ '/' | relative_url }}"
+            {% if page.permalink == '/' %}
+              aria-current="page"
             {% endif %}
-          {% endfor %}
-          {% if site.search_enabled %}
-            <!-- Search -->
-            <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
-              </button>
+            >Home</a
+          >
+        </li>
+        {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+        {% for p in sorted_pages %}
+          {% if p.nav and p.autogen == null and p.permalink != '/' %}
+            {% assign parent_link = p.permalink | remove: 'index.html' %}
+            <li>
+              <a
+                href="{{ p.url | relative_url }}"
+                {% if page.url contains parent_link %}
+                  aria-current="page"
+                {% endif %}
+              >
+                {{- p.title -}}
+              </a>
             </li>
           {% endif %}
-          {% if site.enable_darkmode %}
-            <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
-              </button>
-            </li>
-          {% endif %}
-        </ul>
-      </div>
+        {% endfor %}
+        {% if site.search_enabled %}
+          <li>
+            <button id="search-toggle" type="button" aria-label="サイト内を検索" onclick="openSearchModal()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4 4"></path>
+              </svg>
+              <span class="sr-only">検索</span>
+            </button>
+          </li>
+        {% endif %}
+      </ul>
     </div>
+    <fieldset class="palette-switch">
+      <legend class="sr-only">サイトの配色</legend>
+      <label
+        ><input type="radio" name="palette" value="latte" checked
+        ><span><span class="palette-dot palette-dot--latte" aria-hidden="true"></span>ラテ</span></label
+      >
+      <label
+        ><input type="radio" name="palette" value="mocha"
+        ><span><span class="palette-dot palette-dot--mocha" aria-hidden="true"></span>モカ</span></label
+      >
+      <label
+        ><input type="radio" name="palette" value="espresso"
+        ><span><span class="palette-dot palette-dot--espresso" aria-hidden="true"></span>エスプレッソ</span></label
+      >
+    </fieldset>
   </nav>
-  {% if site.enable_progressbar %}
-    <!-- Scrolling Progress Bar -->
-    <progress id="progress" value="0">
-      <div class="progress-container">
-        <span class="progress-bar"></span>
-      </div>
-    </progress>
-  {% endif %}
 </header>

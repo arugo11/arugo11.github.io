@@ -4,6 +4,13 @@ description: Local×Edge LLM Hackathon に参加し、学習塾向けの数式�
 date: 2026-03-16
 importance: 5
 featured: true
+home_order: 1
+card_title: school-admin
+card_kicker: Local × Edge LLM Hackathon
+award: 優秀賞
+card_img: /assets/img/projects/school-admin.png
+card_alt: school-admin の実際のデモ画面。答案の OCR、分析、宿題承認をつなぐダッシュボード
+card_image_position: center top
 layout: page
 permalink: /projects/school-admin-local-edge-llm-hackathon-2026/
 github: https://github.com/arugo11/school-admin

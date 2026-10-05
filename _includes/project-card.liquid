@@ -1,0 +1,38 @@
+{% assign project = include.project %}
+{% assign card_image = project.card_img | default: project.img %}
+<article class="project-card">
+  <a class="project-card__link" href="{{ project.url | relative_url }}" aria-label="{{ project.title | escape }}">
+    <div class="project-card__image{% unless card_image %} project-card__image--document{% endunless %}">
+      {% if card_image %}
+        <img
+          src="{{ card_image | relative_url }}"
+          alt="{{ project.card_alt | default: project.title | escape }}"
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          {% if project.card_image_position %}
+            style="object-position: {{ project.card_image_position }}"
+          {% endif %}
+        >
+      {% else %}
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M18 10h22l8 8v36H18zM40 10v10h8M25 30h16M25 37h16M25 44h10"></path>
+        </svg>
+      {% endif %}
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__heading">
+        <h3>{{ project.card_title | default: project.title }}</h3>
+        {% if project.award -%}
+          <span class="project-card__award">{{ project.award }}</span>
+        {%- endif %}
+      </div>
+      <p class="project-card__meta">
+        {% if project.card_kicker %}{{ project.card_kicker }}{% else %}{{ project.date | date: '%Y' }}{% endif %}
+      </p>
+      <p class="project-card__description">{{ project.description | strip_html }}</p>
+      <span class="project-card__more">詳細を見る <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

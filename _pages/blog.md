@@ -20,7 +20,8 @@ pagination:
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
-{% assign post_count = site.posts | size %}
+{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+{% assign post_count = visible_posts | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
@@ -40,18 +41,18 @@ pagination:
           <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
         </li>
         {% unless forloop.last %}
-          <p>&bull;</p>
+          <li class="tag-separator" aria-hidden="true">&bull;</li>
         {% endunless %}
       {% endfor %}
       {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
+        <li class="tag-separator" aria-hidden="true">&bull;</li>
       {% endif %}
       {% for category in site.display_categories %}
         <li>
           <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
         </li>
         {% unless forloop.last %}
-          <p>&bull;</p>
+          <li class="tag-separator" aria-hidden="true">&bull;</li>
         {% endunless %}
       {% endfor %}
     </ul>
@@ -59,7 +60,7 @@ pagination:
 {% endif %}
 {% endif %}
 
-{% assign featured_posts = site.posts | where: "featured", "true" %}
+{% assign featured_posts = visible_posts | where: "featured", "true" %}
 {% if featured_posts.size > 0 %}
 <br>
 
@@ -114,10 +115,10 @@ pagination:
 
   <ul class="post-list">
 
-    {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
+    {% if page.pagination.enabled and paginator.posts %}
+      {% assign postlist = paginator.posts | where_exp: 'post', 'post.hidden != true' %}
     {% else %}
-      {% assign postlist = site.posts %}
+      {% assign postlist = visible_posts %}
     {% endif %}
 
     {% for post in postlist %}
@@ -201,7 +202,7 @@ pagination:
   </ul>
 {% endif %}
 
-{% if page.pagination.enabled and post_count > 0 %}
+{% if page.pagination.enabled and paginator and post_count > 0 %}
 {% include pagination.liquid %}
 {% endif %}
 

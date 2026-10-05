@@ -18,8 +18,8 @@ keywords: jekyll, blog, portfolio, tech blog
 lang: ja
 icon: icon.jpg
 
-url: https://arugo11.github.io
-baseurl:
+url: https://argo11.dev
+baseurl: ""
 last_updated: true
 back_to_top: true
 
@@ -31,9 +31,9 @@ back_to_top: true
 colors:
   cream: "#F6ECD4" # カスタムテーマカラー
 
-navbar_fixed: true
-footer_fixed: true
-max_width: 930px
+navbar_fixed: false
+footer_fixed: false
+max_width: 1280px
 
 # -----------------------------------------------------------------------------
 # Open Graph
@@ -164,6 +164,7 @@ exclude:
   - node_modules/
   - README.md
   - vendor/
+  - tests/
 
 # Plug-ins
 plugins:
@@ -203,7 +204,7 @@ profile:
 
 enable_math: true
 enable_darkmode: true
-enable_progressbar: true
+enable_progressbar: false
 enable_medium_zoom: true
 enable_navbar_social: true
 
