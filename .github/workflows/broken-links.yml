@@ -62,7 +62,7 @@ jobs:
           INITIAL_EXIT_CODE: ${{ steps.links.outputs.exit_code }}
         shell: bash
         run: |
-          status="${INITIAL_EXIT_CODE:-1}"
+          status="${lychee_exit_code:-${INITIAL_EXIT_CODE:-1}}"
           # Lychee 0.14 does not retry these HTTP 429 errors itself.
           # The final step propagates failure even when the first step failed.
           for delay in 10 20 40; do
