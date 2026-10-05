@@ -15,6 +15,8 @@ The 22 checks cover preserved routes and Markdown bodies, real project images, p
 
 `content-baseline.json` records the original routes, 12 Markdown body hashes, and avatar hash from commit `d86e5c25a80abf7d6e70f6bb3804f9713bdfb901`. Only the FT-LLM project's body checksum was updated for the approved replacement of the broken competition link and its label with the university's official award report. The original weekly URL remains available with `noindex`; discovery surfaces omit it.
 
+External-link CI retains historical weekly URLs and runs at concurrency two. Because Lychee 0.14 does not retry the shop's HTTP 429 errors itself, a final step explicitly waits 10, 20 and 40 seconds before rechecking when those errors remain. The final exit code still fails the job for persistent 429s, 404s or other errors; no status is accepted or excluded to hide these failures.
+
 ## Project image sources
 
 These assets are copied from actual project materials without image generation or editing:

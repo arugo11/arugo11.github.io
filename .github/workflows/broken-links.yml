@@ -45,6 +45,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Link Checker 🔗
+        id: links
+        continue-on-error: true
         uses: lycheeverse/lychee-action@v1.9.0
         with:
           fail: true
@@ -53,3 +55,30 @@ jobs:
           # Reduce request pressure and retry transient failures, including shop 429s.
           # Keep failed statuses as failures after the retry budget is exhausted.
           args: --max-concurrency 2 --max-retries 3 --retry-wait-time 10 --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _pages/projects.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude 'https://hackathon-nttdata-mse.voltmind.jp/' --verbose --no-progress './**/*.md' './**/*.html'
+
+      - name: Retry shop rate limits and enforce final result
+        if: ${{ always() }}
+        env:
+          INITIAL_EXIT_CODE: ${{ steps.links.outputs.exit_code }}
+        shell: bash
+        run: |
+          status="${INITIAL_EXIT_CODE:-1}"
+          # Lychee 0.14 does not retry these HTTP 429 errors itself.
+          # The final step propagates failure even when the first step failed.
+          for delay in 10 20 40; do
+            if ! grep -Eq '\[429\].*https://shop\.natorisana\.com/products/bakutan2026-(memorialbook|lenticular)' lychee/out.md; then
+              break
+            fi
+            echo "Shop returned HTTP 429; waiting ${delay}s before another check."
+            sleep "$delay"
+            if lychee --max-concurrency 2 --max-retries 3 --retry-wait-time 10 --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _pages/projects.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude 'https://hackathon-nttdata-mse.voltmind.jp/' --verbose --no-progress --format markdown --output lychee/out.md './**/*.md' './**/*.html'; then
+              status=0
+            else
+              status=$?
+            fi
+          done
+          if [[ -f lychee/out.md ]]; then
+            echo '## Final external link result after rate-limit retries' >> "$GITHUB_STEP_SUMMARY"
+            cat lychee/out.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$status"
