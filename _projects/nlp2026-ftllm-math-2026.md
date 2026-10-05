@@ -18,8 +18,8 @@ img: /assets/img/nlp2026-ftllm-award.jpg
 {% include figure.liquid path=page.img alt="NLP2026 FT-LLM 2026 数学タスクの受賞結果" sizes="(min-width: 768px) 720px, 100vw" %}
 
 <div class="mb-3">
-  <a class="btn btn-sm z-depth-0" href="https://llm-jp.github.io/tuning-competition/2026/feature.html" target="_blank" rel="noopener">
-    大会ページを開く
+  <a class="btn btn-sm z-depth-0" href="https://www.shibaura-it.ac.jp/headline/award/20260409_7070_225.html" target="_blank" rel="noopener">
+    大学の公式受賞報告を開く
   </a>
 </div>
 
