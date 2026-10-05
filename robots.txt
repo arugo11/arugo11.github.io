@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://arugo11.github.io/pages/arugo11/sitemap.xml
+Sitemap: https://argo11.dev/sitemap.xml
